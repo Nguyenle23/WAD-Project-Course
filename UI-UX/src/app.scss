@@ -1,0 +1,15 @@
+:root {
+    --main-color: #0b0b0b;
+}
+
+@mixin tablet {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: 480px) {
+        @content;
+    }
+}
