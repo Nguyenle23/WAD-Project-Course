@@ -13,7 +13,7 @@ JWT_SECRET = Your key
 Run server:
 
 ```
-cd server
+cd apis
 npm install 
 npm start
 ```
