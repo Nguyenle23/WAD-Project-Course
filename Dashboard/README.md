@@ -5,7 +5,7 @@
 ## Running Dasboard
 
 ```
-cd admin
+cd Dashboard
 npm install
 npm start
 ```
