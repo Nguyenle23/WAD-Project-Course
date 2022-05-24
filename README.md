@@ -36,7 +36,7 @@ List the ready features here:
 | ----- | ----- | --------- | 
 | User  | Register - Login - Logout account | Login - Update - Delete - Statis - Logout account |
 | Movie | Watch - Random - Filter type of video | Create - Update - Delete video |
-| List  | Wacth trailer - Filter gerne of list | Create - Update - Delete - Random list |
+| List  | Wacth trailer - Filter genre of list | Create - Update - Delete - Random list |
 
 <h2 id="setup"> 🧰 Setup</h2>
 
