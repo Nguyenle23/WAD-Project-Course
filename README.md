@@ -1,6 +1,6 @@
 # Netflix-MERN
 > The web project for Web Application Developement course.
-> Live demo [_here_](https://www.example.com).
+<!-- > Live demo [_here_](https://www.example.com). -->
 
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
 <details open="open">
