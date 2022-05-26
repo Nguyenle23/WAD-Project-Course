@@ -26,7 +26,7 @@ const Home = ({type}) => {
       <NavBar />
       <Featured type={type} setGenre={setGenre}/>
       {lists.length === 0 ?
-        <div className="notice">No list for this type <strong>{genre}</strong></div>
+        <div className="notice">No {type} for this genre <strong>{genre}</strong></div>
       :
       lists.map((list, index) => (
         <List key={index} list={list} />
