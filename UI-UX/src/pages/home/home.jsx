@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react';
+
 import NavBar from '../../components/navbar/navbar';
 import Featured from '../../components/featured/featured';
 import List from '../../components/list/list';
-
 import './home.scss';
 import {getRandomList} from '../../actions/index';
 
@@ -12,7 +12,7 @@ const Home = ({type}) => {
 
   useEffect(() => {
       try {
-        getRandomList()
+        getRandomList(type, genre)
         .then(res => {
           setLists(res.data);
         });
@@ -25,7 +25,10 @@ const Home = ({type}) => {
     <div className="home">
       <NavBar />
       <Featured type={type} setGenre={setGenre}/>
-      {lists.map((list, index) => (
+      {lists.length === 0 ?
+        <div className="notice">No list for this type <strong>{genre}</strong></div>
+      :
+      lists.map((list, index) => (
         <List key={index} list={list} />
       ))}
     </div>

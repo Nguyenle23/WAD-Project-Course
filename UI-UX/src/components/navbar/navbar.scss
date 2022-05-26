@@ -1,5 +1,5 @@
 @import '../../app.scss';
-.navbar {
+.navbarNetflix {
     width: 100%;
     color: white;
     font-size: 14px;
@@ -10,7 +10,7 @@
     &.scrolled {
         background-color: var(--main-color);
     }
-    .container {
+    .containerNetflix {
         padding: 0px 50px;
         display: flex;
         align-items: center;

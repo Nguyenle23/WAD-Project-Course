@@ -15,8 +15,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className={isScrolled ? "navbar scrolled" : "navbar"}>
-        <div className="container">
+    <div className={isScrolled ? "navbarNetflix scrolled" : "navbarNetflix"}>
+        <div className="containerNetflix">
           <div className="left">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"

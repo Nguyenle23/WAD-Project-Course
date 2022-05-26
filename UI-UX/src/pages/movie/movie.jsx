@@ -14,10 +14,9 @@ import {
   MenuRadio,
   MenuRadioGroup,
 } from '@vime/react';
+import "./movie.scss";
 
-import "./watch.scss";
-
-export default function Watch() {
+export default function Movie() {
   const [value, setValue] = useState('1');
 
   // const onMenuItem1Click = () => {
@@ -28,11 +27,12 @@ export default function Watch() {
     const radio = e.target.value;
     setValue(radio.value);
   };
+
   const location = useLocation();
-  const movieData = location.state.movie;
+  const contentData = location.state.content;
 
   return (
-    <div className="watch">
+    <div className="movie">
       <Link to="/">
         <div className="back">
           <ArrowBackOutlined />
@@ -43,7 +43,7 @@ export default function Watch() {
       <Player>
         <Video crossOrigin="" >
           <source
-            data-src={movieData.trailer}
+            data-src={contentData.trailer}
             type="video/mp4"
           />
           <track

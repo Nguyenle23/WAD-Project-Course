@@ -48,7 +48,7 @@ export default function Register() {
           {/* <button className="loginButton">Sign In</button> */}
         </div>
       </div>
-      <div className="container">
+      <div className="containerRegister">
         <h1>Unlimited movies, TV shows, and more.</h1>
         <h2>Watch anywhere. Cancel anytime.</h2>
         <p>

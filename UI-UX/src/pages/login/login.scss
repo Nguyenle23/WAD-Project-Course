@@ -1,11 +1,11 @@
-.login {
+.loginForm {
     width: 100vw;
     height: 100vh;
     background: linear-gradient( to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("https://browsecat.net/sites/default/files/netflix-background-128505-385456-9916359.png");
     background-size: cover;
     position: relative;
-    .top {
-        .wrapper {
+    .headerLogin {
+        .wrapperLogin {
             padding: 20px 50px;
             display: flex;
             align-items: center;
@@ -15,7 +15,7 @@
             }
         }
     }
-    .container {
+    .containerLogin {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -26,7 +26,7 @@
         align-items: center;
         justify-content: center;
         color: white;
-        form {
+        .formLogin {
             width: 300px;
             height: 300px;
             padding: 30px;
@@ -35,17 +35,19 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            input {
+            .inputLogin {
                 height: 40px;
                 border-radius: 5px;
                 background-color: white;
                 color: black;
                 padding-left: 10px;
+                padding: 5px 0;
                 &::placeholder {
                     color: lightgray;
                 }
             }
-            button {
+            .loginButton {
+                margin-top: 5px;
                 height: 40px;
                 border-radius: 5px;
                 background-color: red;
@@ -55,7 +57,9 @@
                 font-weight: 500;
                 cursor: pointer;
             }
-            span {
+            .breifLogin,
+            .policy {
+                margin-top: 10px;
                 color: lightgray;
                 b {
                     color: white;

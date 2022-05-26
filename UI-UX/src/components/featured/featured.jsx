@@ -1,11 +1,24 @@
 import { InfoOutlined, PlayArrow } from "@material-ui/icons";
 import { useEffect, useState } from "react";
+import { Link  } from 'react-router-dom';
 
+import { Modal, Container, Row, Col } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./featured.scss";
 import {getRandomContent} from '../../actions/index';
 
 export default function Featured({ type, setGenre }) {
   const [content, setContent] = useState({});
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setGenre(value)
+  };
 
   useEffect(() => {
     try {
@@ -19,29 +32,23 @@ export default function Featured({ type, setGenre }) {
   },[type]);
 
   return (
+    <>
     <div className="featured">
       {type && (
-        <div className="category">
-          <span>{type === "movies" ? "Movies" : "Series"}</span>
+        <div className="categoryNetflix">
+          <span style={{zIndex: '999', fontSize: '20px'}}>{type === "movies" ? "Movies" : "Series"}</span>
           <select
             name="genre"
             id="genre"
-            onChange={(e) => setGenre(e.target.value)}
+            onChange={handleChange}
+            className="genreSelect"
           >
             <option>Genre</option>
-            <option value="adventure">Adventure</option>
-            <option value="comedy">Comedy</option>
-            <option value="crime">Crime</option>
-            <option value="fantasy">Fantasy</option>
-            <option value="historical">Historical</option>
-            <option value="horror">Horror</option>
-            <option value="romance">Romance</option>
-            <option value="sci-fi">Sci-fi</option>
-            <option value="thriller">Thriller</option>
-            <option value="western">Western</option>
-            <option value="animation">Animation</option>
-            <option value="drama">Drama</option>
-            <option value="documentary">Documentary</option>
+            <option value='adventure'>Adventure</option>
+            <option value='horror'>Horror</option>
+            <option value='action'>Action</option>
+            <option value='drama'>Drama</option>
+            <option value='thriller'>Thriller</option>
           </select>
         </div>
       )}
@@ -50,16 +57,54 @@ export default function Featured({ type, setGenre }) {
         <img src={content.imgTitle} alt="" />
         <span className="desc">{content.desc}</span>
         <div className="buttons">
-          <button className="play">
-            <PlayArrow />
-            <span>Play</span>
-          </button>
-          <button className="more">
+          <Link to="/movie" state={{content}} className="linkStyle">
+            <button className="play">
+              <PlayArrow />
+              <span>Play</span>
+            </button>
+          </Link>
+          <button className="more" onClick={handleShow}>
             <InfoOutlined />
             <span>Info</span>
           </button>
         </div>
       </div>
     </div>
+    <Modal 
+        show={show} 
+        onHide={handleClose} 
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+        variant="flat"
+      >
+        <Modal.Header>
+          <Modal.Title id="contained-modal-title-vcenter">
+            <Container>
+              <span>{content.title}</span>
+            </Container>
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="show-grid">
+          <Container>
+            <Row>
+              <Col xs={6} >
+                {content.description}
+              </Col>
+              <Col xs={6} >
+                {content.year}
+                <br />
+                {content.duration}
+                <br />
+                {content.genre}
+              </Col>
+            </Row>
+          </Container>
+        </Modal.Body>
+        <Modal.Footer>
+          <video className="video" autoPlay progress controls src={content.trailer} />
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }

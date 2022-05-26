@@ -16,9 +16,9 @@ export default function Login() {
   };
 
   return (
-    <div className="login">
-      <div className="top">
-        <div className="wrapper">
+    <div className="loginForm">
+      <div className="headerLogin">
+        <div className="wrapperLogin">
           <img
             className="logo"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
@@ -26,15 +26,17 @@ export default function Login() {
           />
         </div>
       </div>
-      <div className="container">
-        <form>
+      <div className="containerLogin">
+        <form className="formLogin">
           <h1>Sign In</h1>
-          <input
+          <input 
+            className="inputLogin"
             type="email"
             placeholder="Email or phone number"
             onChange={(e) => setEmail(e.target.value)}
           />
           <input
+            className="inputLogin"
             type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
@@ -42,11 +44,11 @@ export default function Login() {
           <button className="loginButton" onClick={handleLogin}>
             Sign In
           </button>
-          <span >
+          <span className="breifLogin">
             New to Netflix? 
             <Link to="/register" className="signUp"><b> Sign up now.</b></Link>
           </span>
-          <small>
+          <small className="policy">
             This page is protected by Google reCAPTCHA to ensure you're not a
             bot. <b>Learn more</b>.
           </small>
