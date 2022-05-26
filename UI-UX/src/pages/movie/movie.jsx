@@ -41,7 +41,7 @@ export default function Movie() {
       </Link>
 
       <Player>
-        <Video crossOrigin="" >
+        <Video poster={contentData.img}>
           <source
             data-src={contentData.trailer}
             type="video/mp4"
@@ -58,7 +58,7 @@ export default function Movie() {
         <DefaultUi noControls>
           <DefaultControls hideOnMouseLeave activeDuration={2000} />
 
-          <Settings>
+          {/* <Settings>
             <Submenu label="Movie Audio" hint="English" >
               <MenuRadioGroup value={value} onVmCheck={onCheck}>
                 <MenuItem label="English" />
@@ -91,7 +91,7 @@ export default function Movie() {
               </MenuRadioGroup>
             </Submenu>
 
-          </Settings>
+          </Settings> */}
         </DefaultUi>
       </Player>
     </div>
