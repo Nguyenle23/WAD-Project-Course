@@ -25,6 +25,8 @@
         font-weight: 500;
         cursor: pointer;
         text-decoration: none;
+        z-index: 1;
+        position: relative;
     }
     .container {
         width: 100%;
