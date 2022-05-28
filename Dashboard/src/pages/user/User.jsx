@@ -178,7 +178,7 @@ export default function User() {
                   name="avatar"
                 />
               </div>
-              <button className="userUpdateButton" onClick={handleSubmit}>Update</button>
+              <button className="userUpdateBtn" onClick={handleSubmit}>Update</button>
             </div>
           </form>
         </div>

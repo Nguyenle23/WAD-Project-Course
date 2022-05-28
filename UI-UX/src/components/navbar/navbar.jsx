@@ -1,13 +1,14 @@
 import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
 import React, { useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthAction";
 import './navbar.scss';
+import {AuthContext} from '../../authContext/AuthContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { dispatch } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
@@ -31,17 +32,18 @@ const Navbar = () => {
             <Link to="/movies" className="link">
             <span>Movies</span>
             </Link>
+            <Link to="/newandtrending" className="link">
             <span>New and Popular </span>
-            <span>My List</span>
+            </Link>
           </div>
           <div className="right">
             <Search className="icon" />
-            <span>KID</span>
-            <Notifications className="icon" />
+            {/* <span>KID</span>
+            <Notifications className="icon" /> */}
             <img
-              src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-              alt=""
-            />
+                src={user.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"}
+                alt=""
+              />  
             <div className="profile">
               <ArrowDropDown className="icon" />
               <div className="options">

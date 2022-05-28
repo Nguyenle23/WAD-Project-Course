@@ -2,6 +2,12 @@
     flex: 4;
 }
 
+.addProductTitle {
+    margin-left: 20px;
+    margin-bottom: -20px;
+    margin-top: 10px;
+}
+
 .addProductForm {
     margin-top: 10px;
     display: flex;
@@ -33,6 +39,7 @@
 .addProductButton {
     height: 30px;
     margin-top: 10px;
+    margin-left: 22px;
     padding: 7px 10px;
     border: none;
     border-radius: 10px;

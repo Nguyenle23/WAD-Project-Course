@@ -41,7 +41,7 @@ export default function Watch() {
       </Link>
 
       <Player>
-        <Video crossOrigin="" >
+        <Video className="video" crossOrigin="" >
           <source
             data-src={movieData.trailer}
             type="video/mp4"

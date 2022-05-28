@@ -1,3 +1,17 @@
+.form-input {
+    background-color: transparent;
+    outline: none;
+    padding: 10px 0;
+}
+
+.form-select {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    padding: 10px 0;
+}
+
 .product {
     flex: 4;
     padding: 20px;
@@ -7,13 +21,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 20px;
 }
 
-.productAddButton {
+.productAddBtn {
     width: 80px;
     border: none;
     padding: 5px;
-    background-color: teal;
+    background-color: rgb(190, 16, 16);
     color: white;
     border-radius: 5px;
     font-size: 16px;
@@ -57,14 +72,12 @@
     margin-top: 10px;
 }
 
-.productInfoItem {
-    width: 150px;
+.product-infoItem {
     display: flex;
-    justify-content: space-between;
 }
 
 .productInfoKey {
-    margin-right: 20px;
+    min-width: 100px;
 }
 
 .productInfoValue {
@@ -72,7 +85,7 @@
 }
 
 .productBottom {
-    padding: 20px;
+    padding: 20px 40px;
     margin: 20px;
     -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
@@ -80,6 +93,7 @@
 
 .productForm {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -104,30 +118,46 @@
     margin-bottom: 10px;
 }
 
-.productUploadImg {
+.product-img {
     width: 100px;
     height: 100px;
-    border-radius: 10px;
+    border-radius: 3px;
     object-fit: cover;
-    margin-right: 20px;
 }
 
-.productFormRight {
+.product-img-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.product-imgs {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-}
-
-.productUpload {
-    display: flex;
     align-items: center;
+    margin-bottom: 16px;
 }
 
-.productButton {
+.product-img-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.product-img-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin-top: 12px;
+    background-color: transparent;
+}
+
+.productBtn {
+    min-width: 100px;
+    height: 30px;
     border: none;
     padding: 5px;
-    border-radius: 5px;
-    background-color: darkblue;
+    border-radius: 3px;
+    background-color: rgba(208, 19, 19, 0.63);
     color: white;
     font-weight: 600;
     cursor: pointer;

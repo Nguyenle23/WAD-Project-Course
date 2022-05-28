@@ -3,6 +3,7 @@ import Login from './pages/login/login';
 import Register from './pages/register/register';
 import Watch from './pages/watch/watch';
 import Movie from './pages/movie/movie';
+import New from './pages/new/new';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import {useContext} from 'react';
 import {AuthContext} from './authContext/AuthContext';
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/series" element={<Home type="series"/>} />
             <Route path="/watch" element={<Watch/>} />
             <Route path="/movie" element={<Movie/>} />
+            <Route path="/newandtrending" element={<New/>} />
           </>
         )}
       </Routes>

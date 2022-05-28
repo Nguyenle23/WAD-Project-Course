@@ -32,8 +32,9 @@ export default function Product() {
         <div className="productTitleContainer">
             <h1 className="productTitle">Movie</h1>
             <Link to="/newproduct">
-            <button className="productAddButton">Create</button>
+                <button className="productAddBtn">Create</button>
             </Link>
+            <button className="productBtn" onClick={handleSubmit}>Update</button>
         </div>
         <div className="productTop">
             {/* views performance */}
@@ -48,22 +49,22 @@ export default function Product() {
                 </div>
                 <div className="productInfoBottom">
                     <div className="productInfoItem">
-                        <span className="productInfoKey">id:</span>
+                        <span className="productInfoKey">Id:</span>
                         <span className="productInfoValue">{movie._id}</span>
                     </div>
-                    <div className="productInfoItem">
-                        <span className="productInfoKey">Genre</span>
+                    <div className="product-infoItem">
+                        <span className="productInfoKey">Genres:</span>
                         <span className="productInfoValue">{movie.genre}</span>
                     </div>
-                    <div className="productInfoItem">
+                    <div className="product-infoItem">
                         <span className="productInfoKey">Year:</span>
                         <span className="productInfoValue">{movie.year}</span>
                     </div>
-                    <div className="productInfoItem">
+                    <div className="product-infoItem">
                         <span className="productInfoKey">Limit:</span>
-                        <span className="productInfoValue">{movie.limit}</span>
+                        <span className="productInfoValue">+{movie.limit}</span>
                     </div>
-                    <div className="productInfoItem">
+                    <div className="product-infoItem">
                         <span className="productInfoKey">Duration:</span>
                         <span className="productInfoValue">{movie.duration}</span>
                     </div>
@@ -74,19 +75,19 @@ export default function Product() {
             <form className="productForm">
                 <div className="productFormLeft">
                     <label>Movie Title</label>
-                    <input type="text" placeholder={movie.title} name="title" onChange={handleChange}/>
+                    <input className="form-input" type="text" placeholder={movie.title} name="title" onChange={handleChange}/>
                     <label>Description</label>
-                    <input type="text" placeholder={movie.description} name="description" onChange={handleChange}/>
+                    <input className="form-input" type="text" placeholder={movie.description} name="description" onChange={handleChange}/>
                     <label>Year</label>
-                    <input type="text" placeholder={movie.year} name="year" onChange={handleChange}/>
+                    <input className="form-input" type="text" placeholder={movie.year} name="year" onChange={handleChange}/>
                     <label>Genre</label>
-                    <input type="text" placeholder={movie.genre} name="genre" onChange={handleChange}/>
+                    <input className="form-input" type="text" placeholder={movie.genre} name="genre" onChange={handleChange}/>
                     <label>Limit</label>
-                    <input type="text" placeholder={movie.limit} name="limit" onChange={handleChange}/>
+                    <input className="form-input" type="text" placeholder={movie.limit} name="limit" onChange={handleChange}/>
                     <label>Duration</label>
-                    <input type="text" placeholder={movie.duration} name="duration" onChange={handleChange}/>
+                    <input className="form-input" type="text" placeholder={movie.duration} name="duration" onChange={handleChange}/>
                     <label>Series</label>
-                    <select name="isSeries" id="isSeries" onChange={handleChange} >
+                    <select className="form-select" name="isSeries" id="isSeries" onChange={handleChange} >
                         {/* <option value="false">No</option>
                         <option value="true">Yes</option> */}
                         {movie.isSeries === true ? 
@@ -101,16 +102,26 @@ export default function Product() {
                         </>}
                     </select>
                     <label>Trailer</label>
-                    <input type="text" placeholder={movie.trailer} name="trailer" onChange={handleChange}/>
+                    <input className="form-input" type="text" placeholder={movie.trailer} name="trailer" onChange={handleChange}/>
                     <label>Video</label>
-                    <input type="text" placeholder={movie.video} name="video" onChange={handleChange}/>
+                    <input className="form-input" type="text" placeholder={movie.video} name="video" onChange={handleChange}/>
                 </div>
-                <div className="productFormRight">
-                    <div className="productUpload">
-                        <img src={movie.img} alt="" className="productUploadImg" />
-                        <input type="text" id="img" name="img" placeholder={movie.img} onChange={handleChange} />
+                <div className="product-img-container">
+                    <div className="product-imgs">
+                        <span className="product-img-title">Cover image</span>
+                        <img src={movie.img} alt="" className="product-img" />
+                        <input className="product-img-input" type="text" id="img" name="img" placeholder={movie.img} onChange={handleChange} />
                     </div>
-                    <button className="productButton" onClick={handleSubmit}>Update</button>
+                    <div className="product-imgs">
+                        <span className="product-img-title">Cover text</span>
+                        <img src={movie.imgTitle} alt="" className="product-img" />
+                        <input className="product-img-input" type="text" id="imgTitle" name="imgTitle" placeholder={movie.imgTitle} onChange={handleChange} />
+                    </div>
+                    <div className="product-imgs">
+                        <span className="product-img-title">Thumbnail</span>
+                        <img src={movie.thumbnail} alt="" className="product-img" />
+                        <input className="product-img-input" type="text" id="thumbnail" name="thumbnail" placeholder={movie.thumbnail} onChange={handleChange} />
+                    </div>
                 </div>
             </form>
         </div>

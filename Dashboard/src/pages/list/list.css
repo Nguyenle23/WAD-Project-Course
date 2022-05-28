@@ -9,11 +9,11 @@
     justify-content: space-between;
 }
 
-.productAddButton {
+.productAddBtn {
     width: 80px;
     border: none;
     padding: 5px;
-    background-color: teal;
+    background-color: rgb(190, 16, 16);
     color: white;
     border-radius: 5px;
     font-size: 16px;
@@ -127,7 +127,7 @@
     border: none;
     padding: 5px;
     border-radius: 5px;
-    background-color: darkblue;
+    background-color: rgb(190, 16, 16);
     color: white;
     font-weight: 600;
     cursor: pointer;
