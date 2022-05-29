@@ -1,10 +1,15 @@
-import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
 import "./widgetSm.css";
 import { Visibility } from "@material-ui/icons";
 import {getUser} from '../../actions/index';
+import {UserContext} from '../../context/userContext/UserContext'
+
 
 export default function WidgetSm() {
   const [newUsers, setNewUsers] = useState([]);
+
+  const { users } = useContext(UserContext);
 
   useEffect(() => {
       try {
@@ -24,7 +29,7 @@ export default function WidgetSm() {
         {newUsers.map((user) => (
         <li key={user._id} className="widgetSmListItem">
           <img 
-           src={
+            src={
               user.profilePic ||
               "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"
             }
@@ -32,14 +37,16 @@ export default function WidgetSm() {
             className="widgetSmImg"
           />
           <div className="widgetSmUser">
-            <span className="widgetSmUsername">Anna Keller</span>
-            <span className="widgetSmUserTitle">Software Engineer</span>
+            <span className="widgetSmUsername">{user.fullname}</span>
+            <span className="widgetSmUserTitle">{user.gender}</span>
             <span className="widgetSmUsername">{user.username}</span>
           </div>
+          <Link to={{pathname: "/user/" + users._id, users: users}}>
           <button className="widgetSmButton">
             <Visibility className="widgetSmIcon" />
             Display
           </button>
+          </Link>
         </li>
         ))}
       </ul>

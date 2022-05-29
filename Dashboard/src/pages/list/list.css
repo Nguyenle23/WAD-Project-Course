@@ -10,13 +10,14 @@
 }
 
 .productAddBtn {
-    width: 80px;
+    min-width: 100px;
+    height: 30px;
     border: none;
     padding: 5px;
+    border-radius: 3px;
     background-color: rgb(190, 16, 16);
     color: white;
-    border-radius: 5px;
-    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -124,6 +125,7 @@
 }
 
 .productButton {
+    min-width: 100px;
     border: none;
     padding: 5px;
     border-radius: 5px;
@@ -131,4 +133,8 @@
     color: white;
     font-weight: 600;
     cursor: pointer;
+}
+
+.productButton:hover {
+    background-color: rgb(170, 10, 10);
 }

@@ -23,16 +23,16 @@ const Navbar = () => {
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
               alt=""
             ></img>
-            <Link to="/" className="link">
+            <Link to="/" onClick={() => window.location.href="/"} className="link">
             <span>Homepage</span>
             </Link>
-            <Link to="/series" className="link">
+            <Link to="/series" onClick={() => window.location.href="/series"} className="link">
             <span>Series</span>
             </Link>
-            <Link to="/movies" className="link">
+            <Link to="/movies" onClick={() => window.location.href="/movies"} className="link">
             <span>Movies</span>
             </Link>
-            <Link to="/newandtrending" className="link">
+            <Link to="/newandtrending" onClick={() => window.location.href="/newandtrending"} className="link">
             <span>New and Popular </span>
             </Link>
           </div>
@@ -40,10 +40,9 @@ const Navbar = () => {
             <Search className="icon" />
             {/* <span>KID</span>
             <Notifications className="icon" /> */}
-            <img
-                src={user.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"}
-                alt=""
-              />  
+            <Link to={{pathname: "/user/" + user._id, users: user}}>
+              <img src={user.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"} alt="" />  
+            </Link>
             <div className="profile">
               <ArrowDropDown className="icon" />
               <div className="options">

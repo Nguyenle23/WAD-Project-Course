@@ -1,17 +1,20 @@
 import React, {useContext} from "react";
+import { Link } from "react-router-dom";
 import "./topbar.css";
 import { NotificationsNone, Language, Settings } from "@material-ui/icons";
 import { AuthContext } from "../../context/authContext/AuthContext";
 import { logout } from "../../context/authContext/AuthAction";
 
 export default function Topbar() {
-  const { dispatch } = useContext(AuthContext);
+  const { user, dispatch } = useContext(AuthContext);
 
   return (
     <div className="topbar">
       <div className="topbarWrapper">
         <div className="topLeft">
-          <span className="logo">Netflix</span>
+          <Link to={`/`}>
+            <span className="logo">Netflix</span>
+          </Link>
         </div>
         <div className="topRight">
           <div className="topbarIconContainer">
@@ -24,9 +27,11 @@ export default function Topbar() {
           </div>
           
           <div className="dropdownProfile">
-            <img src="https://images.pexels.com/photos/1526814/pexels-photo-1526814.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" alt="" className="topAvatar" />
+            <Link to={{pathname: "/user/" + user._id, users: user}}>
+              <img src={user.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"} alt="" className="topAvatar" />
+            </Link>
             <div class="dropdownContent">
-              <div className="topbarIconContainer">
+              <div className="settingIcon">
                 <Settings />
               </div>
               <div className="dropdownLogout">

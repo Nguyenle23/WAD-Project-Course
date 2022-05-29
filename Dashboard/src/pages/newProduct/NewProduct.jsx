@@ -1,5 +1,5 @@
 import {useState, useContext} from 'react';
-import {useHistory} from 'react-router-dom';
+// import {useHistory} from 'react-router-dom';
 
 import "./newProduct.css";
 import { MovieContext } from "../../context/movieContext/MovieContext";
@@ -7,7 +7,7 @@ import { createMovie } from "../../context/movieContext/apiCall";
 
 export default function NewProduct() {
   const [movie, setMovie] = useState(null);
-  const history = useHistory();
+  // const history = useHistory();
 
   const { dispatch } = useContext(MovieContext);
 
@@ -19,7 +19,8 @@ export default function NewProduct() {
   const handleSubmit = (e) => {
     e.preventDefault();
     createMovie(movie, dispatch);
-    history.push("/movies");
+    window.location.href="/movies";
+    // history.push("/movies");
   };
 
   return (
@@ -48,7 +49,11 @@ export default function NewProduct() {
         </div>
         <div className="addProductItem">
           <label>Genre</label>
-          <input type="text" name="genre" onChange={handleChange} placeholder=" Moives genre" />
+          <input type="text" name="genre" onChange={handleChange} placeholder="Moive genre" />
+        </div>
+        <div className="addProductItem">
+          <label>Duration</label>
+          <input type="text" name="duration" onChange={handleChange} placeholder="Movie duration" />
         </div>
         <div className="addProductItem">
           <label>Year</label>

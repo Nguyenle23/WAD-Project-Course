@@ -1,8 +1,8 @@
-.productList{
+.productList {
     flex: 4;
 }
 
-.productListItem{
+.productListItem {
     display: flex;
     align-items: center;
 }
@@ -13,9 +13,9 @@
     border-radius: 50%;
     object-fit: cover;
     margin-right: 10px;
-  }
+}
 
-.productListEdit{
+.productListEdit {
     border: none;
     border-radius: 10px;
     padding: 5px 10px;
@@ -25,7 +25,15 @@
     margin-right: 20px;
 }
 
-.productListDelete{
+.productListEdit:hover {
+    background-color: #2a9d5f;
+}
+
+.productListDelete {
     color: red;
     cursor: pointer;
+}
+
+.productListDelete:hover {
+    color: #d82323;
 }

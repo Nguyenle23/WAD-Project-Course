@@ -9,8 +9,8 @@ import {
 import { useLocation } from "react-router-dom";
 import {useState, useContext} from 'react';
 import "./user.css";
-import { UserContext } from "../../context/userContext/UserContext";
-import { updateUser } from "../../context/userContext/apiCall";
+// import { UserContext } from "../../context/userContext/UserContext";
+// import { updateUser } from "../../context/userContext/apiCall";
 
 export default function User() {
   const location = useLocation();
@@ -19,7 +19,7 @@ export default function User() {
   
   // const history = useHistory();
   
-  const { dispatch } = useContext(UserContext);
+  // const { dispatch } = useContext(UserContext);
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -29,7 +29,7 @@ export default function User() {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateUser(user._id, updateUserObject, dispatch);
+    // updateUser(user._id, updateUserObject, dispatch);
     window.location.href="/users";
     // history.push("/users");
 };

@@ -43,7 +43,7 @@ export default function WidgetLg() {
               />
               <span className="widgetLgName">{user.username}</span>
             </td>
-            <td className="widgetLgDate">2 Jun 2021</td>
+            <td className="widgetLgDate">{user.createdAt}</td>
             <td className="widgetLgAmount">$122.00</td>
             <td className="widgetLgStatus">
               <Button type="Approved" />

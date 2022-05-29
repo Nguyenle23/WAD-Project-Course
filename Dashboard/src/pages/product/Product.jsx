@@ -1,4 +1,4 @@
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {useState, useContext} from 'react';
 
 import "./product.css";
@@ -12,7 +12,7 @@ export default function Product() {
     const movie = location.movie;
     const [updateMovieObject, setUpdateMovie] = useState(null);
     
-    const history = useHistory();
+    // const history = useHistory();
 
     const { dispatch } = useContext(MovieContext);
 
@@ -24,7 +24,8 @@ export default function Product() {
     const handleSubmit = (e) => {
         e.preventDefault();
         updateMovie(movie._id, updateMovieObject, dispatch);
-        history.push("/movies");
+        window.location.href="/movies";
+        // history.push("/movies");
     };
 
     return (

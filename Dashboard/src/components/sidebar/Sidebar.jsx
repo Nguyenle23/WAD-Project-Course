@@ -22,7 +22,7 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Dashboard</h3>
           <ul className="sidebarList">
-            <Link to="/" className="link">
+            <Link to="/"  onClick={() => window.location.href="/"} className="link">
             <li className="sidebarListItem active">
               <LineStyle className="sidebarIcon" />
               Home
@@ -41,19 +41,19 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
-            <Link to="/users" className="link">
+            <Link to="/users" onClick={() => window.location.href="/users"} className="link">
               <li className="sidebarListItem">
                 <PermIdentity className="sidebarIcon" />
                 Users
               </li>
             </Link>
-            <Link to="/movies" className="link">
+            <Link to="/movies" onClick={() => window.location.href="/movies"} className="link">
               <li className="sidebarListItem">
                 <PlayCircleFilledOutlined className="sidebarIcon" />
                 Moives
               </li>
             </Link>
-            <Link to="/lists" className="link">
+            <Link to="/lists" onClick={() => window.location.href="/lists"} className="link">
               <li className="sidebarListItem">
                 <List className="sidebarIcon" />
                 Lists
