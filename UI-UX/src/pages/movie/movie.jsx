@@ -43,16 +43,16 @@ export default function Movie() {
       <Player>
         <Video poster={contentData.img}>
           <source
-            data-src={contentData.trailer}
+            data-src={contentData.video}
             type="video/mp4"
           />
-          <track
+          {/* <track
             default
             kind="subtitles"
             src="https://media.vimejs.com/subs/english.vtt"
             srcLang="en"
             label="English"
-          />
+          /> */}
         </Video>
       
         <DefaultUi noControls>

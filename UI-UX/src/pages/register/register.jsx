@@ -1,5 +1,6 @@
 import { useState, useRef} from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { ArrowForwardIosOutlined } from '@material-ui/icons';
 
 import './register.scss';
 import { registerUser } from '../../actions/index';
@@ -19,6 +20,7 @@ export default function Register() {
   const handleStart = () => {
     setEmail(emailRef.current.value);
   };
+
   const handleFinish = async (e) => {
     e.preventDefault();
     setPassword(passwordRef.current.value);
@@ -31,6 +33,7 @@ export default function Register() {
       console.log(err);
     }
   };
+
   return (
     <div className="register">
       <div className="top">
@@ -56,15 +59,16 @@ export default function Register() {
         </p>
         {!email ? (
           <div className="input">
-            <input type="email" placeholder="email address" ref={emailRef} />
+            <input type="email" placeholder="Email address" ref={emailRef} />
             <button className="registerButton" onClick={handleStart}>
               Get Started
+              <ArrowForwardIosOutlined />
             </button>
           </div>
         ) : (
           <form className="input">
-            <input type="username" placeholder="username" ref={usernameRef} />
-            <input type="password" placeholder="password" ref={passwordRef} />
+            <input type="username" placeholder="Username" ref={usernameRef} />
+            <input type="password" placeholder="Password" ref={passwordRef} />
             <button className="registerButton" onClick={handleFinish}>
               Start
             </button>

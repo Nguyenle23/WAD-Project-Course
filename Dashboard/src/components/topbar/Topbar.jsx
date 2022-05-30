@@ -8,6 +8,11 @@ import { logout } from "../../context/authContext/AuthAction";
 export default function Topbar() {
   const { user, dispatch } = useContext(AuthContext);
 
+  const handleLogout = () => {
+    dispatch(logout());
+    window.location.href="/login";
+  }
+
   return (
     <div className="topbar">
       <div className="topbarWrapper">
@@ -35,7 +40,7 @@ export default function Topbar() {
                 <Settings />
               </div>
               <div className="dropdownLogout">
-                <span onClick={() => dispatch(logout())}>Logout</span>
+                <span onClick={handleLogout}>Logout</span>
               </div>
             </div>
           </div>

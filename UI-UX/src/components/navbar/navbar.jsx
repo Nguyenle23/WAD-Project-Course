@@ -10,6 +10,11 @@ const Navbar = () => {
   const { dispatch } = useContext(AuthContext);
   const { user } = useContext(AuthContext);
 
+  const handleLogout = () => {
+    dispatch(logout());
+    window.location.href="/login";
+  }
+
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
     return () => (window.onscroll = null);
@@ -47,7 +52,7 @@ const Navbar = () => {
               <ArrowDropDown className="icon" />
               <div className="options">
                 <span>Settings</span>
-                <span onClick={() => dispatch(logout())}>Logout</span>
+                <span onClick={handleLogout}>Logout</span>
               </div>
             </div>
           </div>
