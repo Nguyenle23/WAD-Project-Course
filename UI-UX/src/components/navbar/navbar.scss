@@ -45,6 +45,9 @@
             .icon {
                 margin: 0px 15px;
                 cursor: pointer;
+                &:hover {
+                    color: rgb(255, 231, 231);
+                }
             }
             img {
                 width: 30px;
@@ -52,6 +55,9 @@
                 border-radius: 5px;
                 object-fit: cover;
                 cursor: pointer;
+                &:hover {
+                    color: rgb(255, 231, 231);
+                }
             }
             .profile {
                 .options {
@@ -62,6 +68,9 @@
                 span {
                     padding: 10px;
                     cursor: pointer;
+                    &:hover {
+                        color: rgb(255, 231, 231);
+                    }
                 }
                 &:hover {
                     .options {
@@ -76,5 +85,8 @@
     .link {
         color: inherit;
         text-decoration: none;
+        &:hover {
+            color: rgb(255, 231, 231);
+        }
     }
 }

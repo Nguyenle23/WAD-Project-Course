@@ -15,7 +15,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" exact element={user ? <Home /> : <Navigate to="/register" />} />
+        <Route path="/" exact element={user ? <Home /> : <Navigate to="/login" />} />
         <Route path="/register" exact element={!user ? <Register /> : <Navigate to="/" />} />
         <Route path="/login" exact element={!user ? <Login /> : <Navigate to="/" />} />
         {user && (

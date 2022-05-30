@@ -35,7 +35,7 @@ export default function Featured({ type, setGenre }) {
       <div className="featured">
         {type && (
           <div className="categoryNetflix">
-            <span style={{ zIndex: "999", fontSize: "20px" }}>
+            <span style={{ zIndex: "999", fontSize: "30px", fontWeight: "bold" }}>
               {type === "movies" ? "Movies" : "Series"}
             </span>
             <select
