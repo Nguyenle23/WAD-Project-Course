@@ -68,23 +68,19 @@ export default function User() {
             <span className="userShowTitle">Contact Details</span>
             <div className="userShowInfo">
               <PermIdentity className="userShowIcon" />
-              <span className="userShowInfoTitle">{user.gender || "Gender"}</span>
-            </div>
-            <div className="userShowInfo">
-              <PermIdentity className="userShowIcon" />
-              <span className="userShowInfoTitle">{user.username || "Username"}</span>
+              <span className="userShowInfoTitle">{user.gender || "Gender: None"}</span>
             </div>
             <div className="userShowInfo">
               <PhoneAndroid className="userShowIcon" />
-              <span className="userShowInfoTitle">{user.phonenumber || "+84 938 385 678"}</span>
+              <span className="userShowInfoTitle">{user.phonenumber || "Phone: None"}</span>
             </div>
             <div className="userShowInfo">
               <MailOutline className="userShowIcon" />
-              <span className="userShowInfoTitle">{user.email}</span>
+              <span className="userShowInfoTitle">{user.email || "Email: None"}</span>
             </div>
             <div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
-              <span className="userShowInfoTitle">{user.location || "Vietnam"}</span>
+              <span className="userShowInfoTitle">{user.location || "Location: None"}</span>
             </div>
           </div>
         </div>
@@ -110,36 +106,33 @@ export default function User() {
               <div className="userUpdateItem">
                 <label>Gender</label>
                 <select name="gender" id="gender" onChange={handleChange} >
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                  <option value="Other">Other</option>
+                  {user.gender === 'Male' ? 
+                  <>
+                    <option value={'Male'}>Male</option> 
+                    <option value={'Female'}>Female</option>
+                  </>
+                  : 
+                  <>
+                    <option value={'Female'}>Female</option>
+                    <option value={'Male'}>Male</option> 
+                  </>}
                 </select>
               </div>
               <div className="userUpdateItem">
                 <label>Full Name</label>
                 <input
                   type="text"
-                  placeholder={user.fullname || "Full Name"}
+                  placeholder={user.fullname || "Empty"}
                   className="userUpdateInput"
                   onChange={handleChange}
                   name="fullname"
                 />
               </div>
               <div className="userUpdateItem">
-                <label>Username</label>
-                <input
-                  type="text"
-                  placeholder={user.username || "Username"}
-                  className="userUpdateInput"
-                  onChange={handleChange}
-                  name="username"
-                />
-              </div>
-              <div className="userUpdateItem">
                 <label>Email</label>
                 <input
                   type="text"
-                  placeholder={user.email || "Email"}
+                  placeholder={user.email || "Empty"}
                   className="userUpdateInput"
                   onChange={handleChange}
                   name="email"
@@ -149,7 +142,7 @@ export default function User() {
                 <label>Phone</label>
                 <input
                   type="text"
-                  placeholder={user.phonenumber || "+84 938 385 678"}
+                  placeholder={user.phonenumber || "Empty"}
                   className="userUpdateInput"
                   onChange={handleChange}
                   name="phonenumber"
@@ -158,6 +151,7 @@ export default function User() {
               <div className="userUpdateItem">
                 <label>Location</label>
                 <select name="location" id="location" onChange={handleChange} placeholder={user.location}>
+                  <option>Location</option>
                   <option value="Vietnam">VIETNAM</option>
                   <option value="Usa">USA</option>
                   <option value="Japan">JAPAN</option>

@@ -3,34 +3,35 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    username: { type: String, unique: true },
-    email: { type: String, unique: true },
+    email: { type: String },
     password: { type: String },
-    gender: { type: String },
-    location: { type: String },
-    fullname: { type: String },
+    gender: { type: String, default: '' },
+    location: { type: String, default: '' },
+    fullname: { type: String, default: '' },
     phonenumber: { type: String },
     avatar: { type: String, default: '' },
     isAdmin: { type: Boolean, default: false },
     isDestroy: { type: Boolean, default: false },
+    joinDate: { type: String, default: new Date().toLocaleString() },
 }, {
     timestamps: true
 });
+// module.exports = mongoose.model('Users', User);
 
 const User = mongoose.model('User', userSchema);
 
 const validateUser = (user) => {
     const schema = Joi.object({
-        username: Joi.string(),
-        password: Joi.string().min(8).max(30),
         email: Joi.string().email(),
-        gender: Joi.string(),
-        location: Joi.string(),
-        fullname: Joi.string(),
-        phonenumber: Joi.string(),
+        password: Joi.string().min(8).max(30),
+        gender: Joi.string().default(''),
+        location: Joi.string().default(''),
+        fullname: Joi.string().default(''),
+        phonenumber: Joi.string().default(''),
         avatar: Joi.string().default(''),
         isAdmin: Joi.boolean().default(false),
         isDestroy: Joi.boolean().default(false),
+        joinDate: Joi.string().default(new Date().toLocaleString()),
     })
     return schema.validate(user)
 }

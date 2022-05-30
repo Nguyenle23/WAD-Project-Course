@@ -6,32 +6,27 @@ import './register.scss';
 import { registerUser } from '../../actions/index';
 
 export default function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  const [data, setData] = useState("");
+  const [error, setError] = useState("");
   const navigate  = useNavigate();
 
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const usernameRef = useRef();
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setData({ ...data, [e.target.name]: value });
+  }; 
 
-  console.log(email, password, username);
-
-  const handleStart = () => {
-    setEmail(emailRef.current.value);
-  };
-
-  const handleFinish = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setPassword(passwordRef.current.value);
-    setUsername(usernameRef.current.value);
-    try {
-      registerUser(email, password, username);
-      // await axios.post("auth/register", { email,username, password });
-      navigate('/login');
-    } catch (err) {
-      console.log(err);
-    }
+    registerUser(data).then(res => {
+      if(res.status === 200) {
+        navigate('/login');
+      } else if(res.status === 400) {
+        console.error(res);
+        setError(res.data);  
+      } else {
+        setError(res.data);  
+      }
+    }); 
   };
 
   return (
@@ -57,23 +52,15 @@ export default function Register() {
         <p>
           Ready to watch? Enter your email to create or restart your membership.
         </p>
-        {!email ? (
-          <div className="input">
-            <input type="email" placeholder="Email address" ref={emailRef} />
-            <button className="registerButton" onClick={handleStart}>
-              Get Started
-              <ArrowForwardIosOutlined />
-            </button>
-          </div>
-        ) : (
-          <form className="input">
-            <input type="username" placeholder="Username" ref={usernameRef} />
-            <input type="password" placeholder="Password" ref={passwordRef} />
-            <button className="registerButton" onClick={handleFinish}>
-              Start
-            </button>
-          </form>
-        )}
+        <form className="input">
+          <input type="text" id="email" name="email" placeholder="Enter your email" onChange={handleChange}/>
+          <input type="password" id="password" name="password" placeholder="Enter your password" onChange={handleChange}/>
+          <button className="registerButton" onClick={handleSubmit}>
+            Register
+            <ArrowForwardIosOutlined />
+          </button>
+        </form>
+        {error ? <p className="error">{error}</p> : null}
       </div>
     </div>
   );

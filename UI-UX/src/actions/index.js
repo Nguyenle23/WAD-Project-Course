@@ -38,9 +38,12 @@ export const checkLogin = async(user) => {
 }
 
 //register user
-export const registerUser = async(email, username, password) => {
-    console.log(email, username, password);
-    const request = await axios.post(`http://localhost:5555/auth/register`, email, username, password);
-    console.log(request);
-    return request;
+export const registerUser = async(data) => {
+    try {
+        const request = await axios.post(`http://localhost:5555/auth/register`, data);
+        return request;
+    } catch (error) {
+        return error.response;
+    }
+
 }

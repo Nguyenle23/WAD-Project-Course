@@ -5,7 +5,6 @@ import { Visibility } from "@material-ui/icons";
 import {getUser} from '../../actions/index';
 import {UserContext} from '../../context/userContext/UserContext'
 
-
 export default function WidgetSm() {
   const [newUsers, setNewUsers] = useState([]);
 
@@ -30,16 +29,16 @@ export default function WidgetSm() {
         <li key={user._id} className="widgetSmListItem">
           <img 
             src={
-              user.profilePic ||
+              user.avatar ||
               "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"
             }
             alt=""
             className="widgetSmImg"
           />
           <div className="widgetSmUser">
-            <span className="widgetSmUsername">{user.fullname}</span>
-            <span className="widgetSmUserTitle">{user.gender}</span>
-            <span className="widgetSmUsername">{user.username}</span>
+            <span className="widgetSmUsername">{user.email || 'Email' }</span>
+            <span className="widgetSmUsername">{user.username || 'Fullname'}</span>
+            <span className="widgetSmUserTitle">{user.joinDate || 'Joinning time'}</span>
           </div>
           <Link to={{pathname: "/user/" + users._id, users: users}}>
           <button className="widgetSmButton">

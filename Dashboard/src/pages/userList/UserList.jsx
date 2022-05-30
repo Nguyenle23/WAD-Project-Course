@@ -22,8 +22,8 @@ export default function UserList() {
     { field: "_id", headerName: "ID", width: 200 },
     {
       field: "user",
-      headerName: "User",
-      width: 180,
+      headerName: "Avatar",
+      width: 120,
       renderCell: (params) => {
         return (
           <div className="userListUser">
@@ -33,8 +33,8 @@ export default function UserList() {
         );
       },
     },
+    { field: "fullname", headerName: "Full name", width: 150 },
     { field: "email", headerName: "Email", width: 200 },
-    { field: "isAdmin", headerName: "Is Admin", width: 130 },
     { field: "gender", headerName: "Gender", width: 130 },
     { field: "location", headerName: "Location", width: 130 },
     // {
