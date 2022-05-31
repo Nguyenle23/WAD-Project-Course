@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+//get random list
 export const getRandomList = async(type, genre) => {
     const request = await axios.get(`http://localhost:5555/list/${type ? '?type=' + type : ''}${genre ? '&genre=' + genre : ''}`, {
         headers: {
@@ -9,6 +10,7 @@ export const getRandomList = async(type, genre) => {
     return request;
 }
 
+//get movie
 export const getMovie = async(item) => {
     const request = await axios.get(`http://localhost:5555/movie/find/${item}`, {
         headers: {
@@ -18,6 +20,7 @@ export const getMovie = async(item) => {
     return request;
 }
 
+//get random content
 export const getRandomContent = async(type) => {
     const request = await axios.get(`http://localhost:5555/movie/random?type=${type}`, {
         headers: {
@@ -46,4 +49,24 @@ export const registerUser = async(data) => {
         return error.response;
     }
 
+}
+
+//forgot password
+export const forgotPassword = async(data) => {
+    try {
+        const request = await axios.post(`http://localhost:5555/auth/forgot`, data);
+        return request;
+    } catch (error) {
+        return error.response;
+    }
+}
+
+//reset password
+export const resetPassword = async(id, data) => {
+    try {
+        const request = await axios.post(`http://localhost:5555/auth/reset/${id}`, data);
+        return request.data;
+    } catch (error) {
+        return error.response;
+    }
 }

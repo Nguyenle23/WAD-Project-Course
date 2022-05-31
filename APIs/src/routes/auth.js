@@ -8,5 +8,7 @@ const validateMiddleWare = require('../middlewares/validData');
 
 router.post('/register', authController.register);
 router.post('/login', authController.login);
+router.post('/forgot', authController.forgot);
+router.post('/reset/:id', authController.reset);
 
 module.exports = router;

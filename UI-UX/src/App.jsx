@@ -1,5 +1,6 @@
 import Home from './pages/home/home';
 import Login from './pages/login/login';
+import Forgot from './pages/forgot/forgot';
 import Register from './pages/register/register';
 import Watch from './pages/watch/watch';
 import Movie from './pages/movie/movie';
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/" exact element={user ? <Home /> : <Navigate to="/login" />} />
         <Route path="/register" exact element={!user ? <Register /> : <Navigate to="/" />} />
         <Route path="/login" exact element={!user ? <Login /> : <Navigate to="/" />} />
+        <Route path="/forgot/:id/:token" element={<Forgot />} />
         {user && (
           <>
             <Route path="/movies"  element={<Home type="movies"/>} />

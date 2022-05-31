@@ -1,4 +1,4 @@
-import { useState, useRef} from 'react';
+import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ArrowForwardIosOutlined } from '@material-ui/icons';
 
@@ -21,7 +21,6 @@ export default function Register() {
       if(res.status === 200) {
         navigate('/login');
       } else if(res.status === 400) {
-        console.error(res);
         setError(res.data);  
       } else {
         setError(res.data);  
