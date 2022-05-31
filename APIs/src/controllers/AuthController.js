@@ -217,15 +217,15 @@ const forgot = async(req, res) => {
 
             // create reusable transporter object using the default SMTP transport
             let transporter = nodemailer.createTransport({
-                host: 'mail.glamorous.com',
+                host: 'mail.netflix.com',
                 port: 587,
                 secure: false, // true for 465, false for other ports
                 host: 'smtp.gmail.com',
                 port: 465,
                 secure: true, // use SSL
                 auth: {
-                    user: 'glamorous.cs01@gmail.com', // generated ethereal user
-                    pass: 'bin23082001' // generated ethereal password
+                    user: 'netflixWAD.cs@gmail.com', // generated ethereal user
+                    pass: 'B1E23082001' // generated ethereal password
                 },
                 tls: {
                     rejectUnauthorized: false
@@ -234,7 +234,7 @@ const forgot = async(req, res) => {
 
             // setup email data with unicode symbols
             let mailOptions = {
-                from: '"Netflix Customer Service" <glamorous.cs01@gmail.com>', // sender address
+                from: '"Netflix Customer Service" <netflixWAD.cs@gmail.com>', // sender address
                 to: emailCus, // list of receivers
                 subject: 'Confirm Reset Password', // Subject line
                 text: 'Hello world?', // plain text body
