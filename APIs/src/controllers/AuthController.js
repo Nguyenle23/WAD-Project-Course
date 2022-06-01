@@ -28,7 +28,101 @@ const register = async(req, res) => {
         });
 
         const newUser = await user.save();
-        res.status(200).json(newUser);
+        // res.status(200).json(newUser);
+
+        try {
+            //parameters
+            var partnerCode = "MOMOTLIE20220601";
+            var accessKey = "VCN2GFIn1bpWjNgQ";
+            var secretkey = "lGv0igg8y2Kypc78p79ywOnMg67EcyH2";
+            var requestId = partnerCode + new Date().getTime();
+            var orderId = requestId;
+            var orderInfo = `Netflix subscribes for ${newUser.email}`;
+            var redirectUrl = `http://localhost:3001/login`;
+            var ipnUrl = "https://callback.url/notify";
+            // var ipnUrl = redirectUrl = "https://webhook.site/454e7b77-f177-4ece-8236-ddf1c26ba7f8";
+            var amount = 59000;
+            var requestType = "captureWallet"
+            var extraData = ""; //pass empty value if your merchant does not have stores
+
+            //before sign HMAC SHA256 with format
+            //accessKey=$accessKey&amount=$amount&extraData=$extraData&ipnUrl=$ipnUrl&orderId=$orderId&orderInfo=$orderInfo&partnerCode=$partnerCode&redirectUrl=$redirectUrl&requestId=$requestId&requestType=$requestType
+            var rawSignature = "accessKey=" + accessKey + "&amount=" + amount + "&extraData=" + extraData + "&ipnUrl=" + ipnUrl + "&orderId=" + orderId + "&orderInfo=" + orderInfo + "&partnerCode=" + partnerCode + "&redirectUrl=" + redirectUrl + "&requestId=" + requestId + "&requestType=" + requestType
+                //puts raw signature
+                // console.log("--------------------RAW SIGNATURE----------------")
+                // console.log(rawSignature)
+                //signature
+            const crypto = require('crypto');
+            var signature = crypto.createHmac('sha256', secretkey)
+                .update(rawSignature)
+                .digest('hex');
+            // console.log("--------------------SIGNATURE----------------")
+            // console.log(signature)
+
+            //json object send to MoMo endpoint
+            const requestBody = JSON.stringify({
+                partnerCode: partnerCode,
+                accessKey: accessKey,
+                requestId: requestId,
+                amount: amount,
+                orderId: orderId,
+                orderInfo: orderInfo,
+                redirectUrl: redirectUrl,
+                ipnUrl: ipnUrl,
+                extraData: extraData,
+                requestType: requestType,
+                signature: signature,
+                lang: 'en'
+            });
+            //Create the HTTPS objects
+            const https = require('https');
+            const options = {
+                    hostname: 'test-payment.momo.vn',
+                    port: 443,
+                    path: '/v2/gateway/api/create',
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Content-Length': Buffer.byteLength(requestBody)
+                    }
+                }
+                //Send the request and get the response
+            const req2 = https.request(options, res2 => {
+                // console.log(`Status: ${res2.statusCode}`);
+                // console.log(`Headers: ${JSON.stringify(res2.headers)}`);
+                res2.setEncoding('utf8');
+                var url = [];
+                res2.on('data', (body) => {
+                    // console.log('Body: ');
+                    // console.log(JSON.parse(body).resultCode);
+                    if (JSON.parse(body).resultCode == 0) {
+                        url.push(JSON.parse(body).payUrl);
+                        // console.log(url);
+                        res.status(200).json(url);
+                    } else {
+                        res.status(500).json(JSON.parse(body).resultCode);
+                    }
+                    // console.log('payUrl: ');
+                    // console.log(JSON.parse(body).payUrl);
+                    // url.push(JSON.parse(body).payUrl);
+                });
+                // res2.on('end', () => {
+                //     // console.log('No more data in response.');
+                //     res.status(200).json(url);
+                // });
+            })
+
+            req2.on('error', (e) => {
+                // console.log(`problem with request: ${e.message}`);
+            });
+            // write data to request body
+            // console.log("Sending....")
+            req2.write(requestBody);
+            req2.end();
+        } catch (error) {
+            // console.log(error);
+            res.status(400).json(error);
+        }
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -217,15 +311,15 @@ const forgot = async(req, res) => {
 
             // create reusable transporter object using the default SMTP transport
             let transporter = nodemailer.createTransport({
-                host: 'mail.netflix.com',
+                host: 'mail.glamorous.com',
                 port: 587,
                 secure: false, // true for 465, false for other ports
                 host: 'smtp.gmail.com',
                 port: 465,
                 secure: true, // use SSL
                 auth: {
-                    user: 'netflixWAD.cs@gmail.com', // generated ethereal user
-                    pass: 'B1E23082001' // generated ethereal password
+                    user: 'glamorous.cs01@gmail.com', // generated ethereal user
+                    pass: 'bin23082001' // generated ethereal password
                 },
                 tls: {
                     rejectUnauthorized: false
@@ -234,7 +328,7 @@ const forgot = async(req, res) => {
 
             // setup email data with unicode symbols
             let mailOptions = {
-                from: '"Netflix Customer Service" <netflixWAD.cs@gmail.com>', // sender address
+                from: '"Netflix Customer Service" <glamorous.cs01@gmail.com>', // sender address
                 to: emailCus, // list of receivers
                 subject: 'Confirm Reset Password', // Subject line
                 text: 'Hello world?', // plain text body

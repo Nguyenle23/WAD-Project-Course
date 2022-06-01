@@ -8,7 +8,7 @@ import { registerUser } from '../../actions/index';
 export default function Register() {
   const [data, setData] = useState("");
   const [error, setError] = useState("");
-  const navigate  = useNavigate();
+  // const navigate  = useNavigate();
 
   const handleChange = (e) => {
     const value = e.target.value;
@@ -19,7 +19,7 @@ export default function Register() {
     e.preventDefault();
     registerUser(data).then(res => {
       if(res.status === 200) {
-        navigate('/login');
+        window.location.href = res.data;
       } else if(res.status === 400) {
         setError(res.data);  
       } else {
