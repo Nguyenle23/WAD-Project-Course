@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowForwardIosOutlined } from '@material-ui/icons';
 
 import './register.scss';
@@ -19,11 +19,11 @@ export default function Register() {
     e.preventDefault();
     registerUser(data).then(res => {
       if(res.status === 200) {
-        window.location.href = res.data;
+        window.location.href = res.data.url;
       } else if(res.status === 400) {
         setError(res.data);  
       } else {
-        setError(res.data);  
+        setError(res.data.code);  
       }
     }); 
   };

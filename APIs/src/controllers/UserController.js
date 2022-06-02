@@ -61,6 +61,19 @@ const findAllUser = async(req, res) => {
     }
 };
 
+const findNewTransaction = async(req, res) => {
+    if (req.user.isAdmin) {
+        try {
+            const users = await userModel.User.find().sort({ updatedAt: -1 }).limit(6);
+            res.status(200).json(users);
+        } catch (err) {
+            return res.status(500).json(err);
+        }
+    } else {
+        return res.status(403).json("You are not alow to see all users!");
+    }
+};
+
 const findUserStats = async(req, res) => {
     const today = new Date();
     const lastYear = today.setFullYear(today.getFullYear() - 1);
@@ -125,6 +138,7 @@ module.exports = {
     deleteUser,
     findUser,
     findAllUser,
+    findNewTransaction,
     findUserStats,
     getAllUser,
     removeUser,

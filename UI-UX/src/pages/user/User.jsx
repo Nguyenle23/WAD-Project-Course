@@ -23,8 +23,6 @@ export default function User() {
     setUpdateUser({ ...dataUser, [e.target.name]: value });
   };
 
-  console.log(updateUserObject);
-  
   const handleSubmit = (e) => {
     e.preventDefault();
     updateUser(dataUser._id, updateUserObject, dispatch);

@@ -13,6 +13,10 @@ const userSchema = new Schema({
     isAdmin: { type: Boolean, default: false },
     isDestroy: { type: Boolean, default: false },
     joinDate: { type: String, default: new Date().toLocaleString() },
+    beginDate: { type: String },
+    expiredDate: { type: String },
+    isActive: { type: Boolean, default: false },
+    price: { type: String },
 }, {
     timestamps: true
 });
@@ -32,6 +36,10 @@ const validateUser = (user) => {
         isAdmin: Joi.boolean().default(false),
         isDestroy: Joi.boolean().default(false),
         joinDate: Joi.string().default(new Date().toLocaleString()),
+        beginDate: Joi.string(),
+        expiredDate: Joi.string(),
+        isActive: Joi.boolean().default(false),
+        price: Joi.string(),
     })
     return schema.validate(user)
 }

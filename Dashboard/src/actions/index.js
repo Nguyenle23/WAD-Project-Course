@@ -3,7 +3,7 @@ import axios from 'axios';
 //--------------home-----------------
 
 //get statistics table
-export const getStats = async(type, genre) => {
+export const getStat = async() => {
     const request = await axios.get(`http://localhost:5555/user/stats`, {
         headers: {
             token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
@@ -13,8 +13,18 @@ export const getStats = async(type, genre) => {
 }
 
 //get all new register users
-export const getUser = async(type, genre) => {
+export const getUser = async() => {
     const request = await axios.get(`http://localhost:5555/user?new=true`, {
+        headers: {
+            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        }
+    });
+    return request;
+}
+
+//get all new transaction users
+export const getTransaction = async() => {
+    const request = await axios.get(`http://localhost:5555/user/transaction`, {
         headers: {
             token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         }

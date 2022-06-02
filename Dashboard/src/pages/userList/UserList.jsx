@@ -20,37 +20,37 @@ export default function UserList() {
   
   const columns = [
     { field: "_id", headerName: "ID", width: 200 },
-    {
-      field: "user",
-      headerName: "Avatar",
-      width: 120,
-      renderCell: (params) => {
-        return (
-          <div className="userListUser">
-            <img className="userListImg" src={params.row.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"} alt="" />
-            {params.row.username}
-          </div>
-        );
-      },
-    },
+    // {
+    //   field: "user",
+    //   headerName: "Avatar",
+    //   width: 120,
+    //   renderCell: (params) => {
+    //     return (
+    //       <div className="userListUser">
+    //         <img className="userListImg" src={params.row.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"} alt="" />
+    //         {params.row.username}
+    //       </div>
+    //     );
+    //   },
+    // },
     { field: "fullname", headerName: "Full name", width: 150 },
     { field: "email", headerName: "Email", width: 200 },
     { field: "gender", headerName: "Gender", width: 130 },
-    { field: "location", headerName: "Location", width: 130 },
-    // {
-    //   field: "status",
-    //   headerName: "Status",
-    //   width: 120,
-    // },
-    // {
-    //   field: "transaction",
-    //   headerName: "Transaction Volume",
-    //   width: 200,
-    // },
+    // { field: "location", headerName: "Location", width: 130 },
+    {
+      field: "isActive",
+      headerName: "Status",
+      width: 120,
+    },
+    {
+      field: "price",
+      headerName: "Total price",
+      width: 140,
+    },
     {
       field: "action",
       headerName: "Action",
-      width: 150,
+      width: 130,
       renderCell: (params) => {
         return (
           <>

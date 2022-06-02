@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 
 import "./widgetLg.css";
-import {getUser} from '../../actions/index';
+import { getTransaction } from '../../actions/index';
 
 export default function WidgetLg() {
 
@@ -9,7 +9,7 @@ export default function WidgetLg() {
 
   useEffect(() => {
       try {
-        getUser()
+        getTransaction()
           .then((res) => {
             setNewUsers(res.data)
           });
@@ -29,7 +29,8 @@ export default function WidgetLg() {
         <tbody>
           <tr className="widgetLgTr">
             <th className="widgetLgTh">Customer</th>
-            <th className="widgetLgTh">Register Date</th>
+            <th className="widgetLgTh">Begining Date</th>
+            <th className="widgetLgTh">Expired Date</th>
             <th className="widgetLgTh">Amount</th>
             <th className="widgetLgTh">Status</th>
           </tr>
@@ -44,10 +45,15 @@ export default function WidgetLg() {
               />
               <span className="widgetLgName">{user.email || "Email"}</span>
             </td>
-            <td className="widgetLgDate">{user.joinDate || "Time register"}</td>
-            <td className="widgetLgAmount">$122.00</td>
+            <td className="widgetLgDate">{user.beginDate || "Empty"}</td>
+            <td className="widgetLgDate">{user.expiredDate || "Empty"}</td>
+            <td className="widgetLgAmount">{user.isActive === true ? user.price + " VND" : "Not yet"}</td>
             <td className="widgetLgStatus">
-              <Button type="Approved" />
+              {user.isActive === true ? (
+                <Button type="Approved" />
+              ) : (
+                <Button type="Declined" />
+              )}
             </td>
           </tr>
           ))}

@@ -37,7 +37,7 @@ export default function WidgetSm() {
           />
           <div className="widgetSmUser">
             <span className="widgetSmUsername">{user.email || 'Email' }</span>
-            <span className="widgetSmUsername">{user.username || 'Fullname'}</span>
+            <span className="widgetSmUsername">{user.fullname || 'Fullname'}</span>
             <span className="widgetSmUserTitle">{user.joinDate || 'Joinning time'}</span>
           </div>
           <Link to={{pathname: "/user/" + users._id, users: users}}>
