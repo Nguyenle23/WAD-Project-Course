@@ -5,7 +5,7 @@ import Register from './pages/register/register';
 import Watch from './pages/watch/watch';
 import Movie from './pages/movie/movie';
 import New from './pages/new/new';
-import User from './pages/user/User';
+import User from './pages/user/user';
 import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import {useContext} from 'react';
 import {AuthContext} from './authContext/AuthContext';

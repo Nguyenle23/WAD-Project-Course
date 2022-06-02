@@ -110,21 +110,13 @@ const removeUser = async(req, res) => {
 }
 
 const updateUserAdmin = async(req, res) => {
-    if (req.user.isAdmin) {
-        try {
-            const updateUser = await userModel.User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-            // console.log(movie)
-            // const updatedMovie = await Movie.findByIdAndUpdate(
-            //     req.params.id, {
-            //         $set: req.body,
-            //     }, { new: true }
-            // );
-            res.status(200).json(updateUser);
-        } catch (err) {
-            res.status(500).json(err);
-        }
-    } else {
-        res.status(403).json("You are not allowed!");
+    accessToken = req.body.accessToken;
+    try {
+        const updateUser = await userModel.User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const { password, ...info } = updateUser._doc;
+        res.status(200).json({...info, accessToken });
+    } catch (err) {
+        res.status(500).json(err);
     }
 }
 

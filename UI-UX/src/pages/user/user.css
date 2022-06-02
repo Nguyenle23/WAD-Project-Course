@@ -1,6 +1,9 @@
 .user {
-    flex: 4;
-    padding: 20px;
+    padding: 75px 150px;
+    background-color: black;
+    height: 100vh;
+    width: 100%;
+    color: #E50914;
 }
 
 .newUserItem>input {
@@ -42,6 +45,10 @@
     justify-content: space-between;
 }
 
+.userTitle {
+    font-size: 30px;
+}
+
 .userAddButton {
     width: 80px;
     border: none;
@@ -55,21 +62,22 @@
 
 .userContainer {
     display: flex;
-    margin-top: 20px;
+    margin-top: 150px;
 }
 
 .userShow {
-    flex: 1;
+    flex: 1 1;
     padding: 20px;
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 15px 10px rgb(229 9 20 / 80%);
+    box-shadow: 0px 0px 15px 10px rgb(229 9 20 / 80%);
+    color: #fff;
 }
 
 .userUpdate {
     flex: 2;
     padding: 20px;
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 15px 10px rgb(229 9 20 / 80%);
+    box-shadow: 0px 0px 15px 10px rgb(229 9 20 / 80%);
     margin-left: 20px;
 }
 
@@ -79,8 +87,8 @@
 }
 
 .userShowImg {
-    width: 40px;
-    height: 40px;
+    width: 40%;
+    height: 40%;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -101,19 +109,20 @@
 
 .userShowBottom {
     margin-top: 20px;
+    color: #fff;
 }
 
 .userShowTitle {
     font-size: 14px;
     font-weight: 600;
-    color: rgb(175, 170, 170);
+    /* color: rgb(175, 170, 170); */
 }
 
 .userShowInfo {
     display: flex;
     align-items: center;
     margin: 20px 0px;
-    color: #444;
+    color: #fff;
 }
 
 .userShowIcon {
@@ -127,12 +136,13 @@
 .userUpdateTitle {
     font-size: 24px;
     font-weight: 600;
+    color: #fff;
 }
 
 .userUpdateForm {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    color: #fff;
 }
 
 .userUpdateItem {
@@ -148,9 +158,28 @@
 
 .userUpdateInput {
     border: none;
+    border-radius: 15px;
+    outline: none;
     width: 250px;
     height: 30px;
-    border-bottom: 1px solid gray;
+    padding: 5px 10px;
+}
+
+.selectInput {
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    width: 250px;
+    height: 30px;
+    padding: 5px 10px;
+}
+
+.uploadInput {
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    height: 30px;
+    padding: 5px 10px;
 }
 
 .userUpdateRight {
@@ -184,4 +213,8 @@
     background-color: rgba(208, 19, 19, 0.63);
     color: white;
     font-weight: 600;
+}
+
+.userUpdateBtn:hover {
+    background-color: rgba(208, 19, 19, 0.8);
 }

@@ -1,14 +1,16 @@
-import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
+import { ArrowDropDown, Search } from '@material-ui/icons';
 import React, { useState, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import { logout } from "../../authContext/AuthAction";
 import './navbar.scss';
-import {AuthContext} from '../../authContext/AuthContext';
+import { AuthContext } from '../../authContext/AuthContext';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const { dispatch } = useContext(AuthContext);
   const { user } = useContext(AuthContext);
+
+  // const users = user;
 
   const handleLogout = () => {
     dispatch(logout());
@@ -45,13 +47,15 @@ const Navbar = () => {
             <Search className="icon" />
             {/* <span>KID</span>
             <Notifications className="icon" /> */}
-            <Link to={{pathname: "/user/" + user._id, users: user}}>
-              <img src={user.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"} alt="" />  
-            </Link>
+            <img src={user.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"} alt="" />  
             <div className="profile">
               <ArrowDropDown className="icon" />
               <div className="options">
-                <span>Settings</span>
+                <span>
+                  <Link to={{pathname: "/user/" + user._id}} state={{ user }}>
+                    Profile
+                  </Link>
+                </span>
                 <span onClick={handleLogout}>Logout</span>
               </div>
             </div>

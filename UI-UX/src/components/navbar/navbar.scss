@@ -67,9 +67,16 @@
                 }
                 span {
                     padding: 10px;
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        &:hover {
+                            color: rgb(216, 178, 178);
+                        }
+                    }
                     cursor: pointer;
                     &:hover {
-                        color: rgb(255, 231, 231);
+                        color: rgb(216, 178, 178);
                     }
                 }
                 &:hover {

@@ -23,7 +23,6 @@ export default function User() {
 
   const handleChange = (e) => {
     const value = e.target.value;
-    console.log({ ...user, [e.target.name]: value });
     setUpdateUser({ ...user, [e.target.name]: value });
   };
   

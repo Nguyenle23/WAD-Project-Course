@@ -70,3 +70,13 @@ export const resetPassword = async(id, data) => {
         return error.response;
     }
 }
+
+//update user
+export const upgradeUser = async(id, data) => {
+    const request = await axios.put(`http://localhost:5555/user/updateUser/${id}`, data, {
+        headers: {
+            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        }
+    });
+    return request;
+}
