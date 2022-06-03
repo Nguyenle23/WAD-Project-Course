@@ -9,24 +9,32 @@ import {useState, useContext} from 'react';
 import "./user.css";
 import Navbar from "../../components/navbar/navbar";
 import { AuthContext } from '../../authContext/AuthContext';
-import { updateUser } from "../../authContext/apiCall";
+// import { updateUser } from "../../authContext/apiCall";
+import { upgradeUser } from "../../actions/index";
 
 export default function User() {
   const location = useLocation();
   const dataUser = location.state.user;
   const [updateUserObject, setUpdateUser] = useState(null);
-  
   const { dispatch } = useContext(AuthContext);
-
+  
   const handleChange = (e) => {
     const value = e.target.value;
-    setUpdateUser({ ...dataUser, [e.target.name]: value });
+    setUpdateUser({...updateUserObject, [e.target.name]: value, accessToken: dataUser.accessToken});
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateUser(dataUser._id, updateUserObject, dispatch);
-    window.location.href="/";
+    // updateUser(dataUser._id, updateUserObject, dispatch);
+    upgradeUser(dataUser._id, updateUserObject, dispatch)
+      .then((res) => {
+        const dataUser = res.data
+        dispatch({
+          type: "UPDATE_USER_SUCCESS",
+          payload: dataUser,
+        });
+        window.location.href="/";
+      })
   };
 
   return (

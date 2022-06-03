@@ -123,13 +123,20 @@ const removeUser = async(req, res) => {
 }
 
 const updateUserAdmin = async(req, res) => {
-    accessToken = req.body.accessToken;
     try {
-        const updateUser = await userModel.User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-        const { password, ...info } = updateUser._doc;
-        res.status(200).json({...info, accessToken });
+        const accessToken = req.body.accessToken;
+        const decoded = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
+        const user = await userModel.User.findById(req.params.id);
+        if (decoded._id === user._id.toString()) {
+            const updatedUser = await userModel.User.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true });
+            const { password, ...info } = updatedUser._doc;
+            return res.status(200).json({...info, accessToken });
+        } else {
+            return res.status(403).json("You can update only your account!");
+        }
     } catch (err) {
-        res.status(500).json(err);
+        console.error(err);
+        return res.status(500).json(err);
     }
 }
 

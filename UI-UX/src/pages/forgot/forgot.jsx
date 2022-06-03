@@ -9,11 +9,7 @@ export default function Forgot() {
 
   const handleChange = (e) => {
     const value = e.target.value;
-    if (value.length < 8) {
-      setSendStatus("Password must be at least 8 characters");
-    } else {
-      setResetPass({ ...resetPass, [e.target.name]: value });
-    }
+    setResetPass({ ...resetPass, [e.target.name]: value });
   };
 
   var id = JSON.parse(localStorage.getItem("data")).id
@@ -26,7 +22,9 @@ export default function Forgot() {
         setSendStatus(res.message);
         setTimeout(() => {
           window.location.href = "/login";
-        }, 2000);
+        }, 1000);
+      } else if (res.status === 400) {
+        setSendStatus(res.data.message);
       }
     })
   };

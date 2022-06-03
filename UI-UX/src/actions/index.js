@@ -36,8 +36,13 @@ export const getRandomContent = async(type) => {
 
 //check login
 export const checkLogin = async(user) => {
-    const request = await axios.post(`http://localhost:5555/auth/login`, user);
-    return request;
+    try {
+        const request = await axios.post(`http://localhost:5555/auth/login`, user);
+        return request;
+    } catch (error) {
+        console.log(error);
+        return error.response;
+    }
 }
 
 //register user
@@ -78,5 +83,6 @@ export const upgradeUser = async(id, data) => {
             token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         }
     });
+    console.log(request)
     return request;
 }

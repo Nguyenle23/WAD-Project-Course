@@ -1,22 +1,36 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 import './login.scss';
-import { AuthContext } from "../../authContext/AuthContext";
-import { login } from "../../authContext/apiCall";
-import { forgotPassword } from "../../actions/index";
+// import { AuthContext } from "../../authContext/AuthContext";
+// import { login } from "../../authContext/apiCall";
+import { checkLogin, forgotPassword } from "../../actions/index";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const {dispatch} = useContext(AuthContext);
+  // const {dispatch} = useContext(AuthContext);
   const [forgot, setForgot] = useState(false);
   const [data, setData] = useState("");
   const [sendStatus, setSendStatus] = useState("");
+  const [url, setUrl] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
-    login({ email, password }, dispatch);
+    // login({ email, password }, dispatch);
+    checkLogin({ email, password })
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+          localStorage.setItem("user", JSON.stringify(res.data));
+          window.location.href = "/";
+        } else if (res.data.code === 23) {
+          setSendStatus(res.data.message);
+          setUrl(res.data.result.url)
+        } else {
+          setSendStatus(res.data);
+        }
+    })
   };
 
   const handleChange = (e) => {
@@ -28,16 +42,13 @@ export default function Login() {
     e.preventDefault();
     forgotPassword(data)
       .then(res => {
-        const item = res.data;
+        var item = res.data;
         const object = item.result;
         if (res.status === 200) {
-          setSendStatus("Please check your email !");
           localStorage.setItem("data", JSON.stringify(object));
-          setTimeout(() => {
-            window.location.href = "/login";
-          }, 2000);
+          window.location.href = object.link;
         } else if (res.status === 400) {
-          setSendStatus("Email not found");
+          setSendStatus(res.data);
         }
     })
   };
@@ -58,6 +69,11 @@ export default function Login() {
           {forgot === false ? (
             <>
               <h1>Sign In</h1>
+              {sendStatus ? 
+                <p className="loginStatus">{sendStatus}</p>
+                : 
+                null 
+              }
               <input 
                 className="inputLogin"
                 type="email"
@@ -74,6 +90,7 @@ export default function Login() {
                 Sign In
               </button>
               <span className="forgotLogin">
+                {url ? <a className="re-sub" href={url}>Re-subscribes!</a> : null}
                 <button className="forgot" onClick={() => setForgot(!forgot)}>Need help?</button>
               </span>
               <span className="breifLogin">
