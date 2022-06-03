@@ -1,5 +1,4 @@
 import {useState, useContext, useEffect} from 'react';
-// import {useHistory} from 'react-router-dom';
 
 import "./newList.css";
 import { MovieContext } from "../../context/movieContext/MovieContext";
@@ -10,7 +9,6 @@ import { createList } from "../../context/listContext/apiCall";
 
 export default function NewList() {
   const [list, setList] = useState(null);
-  // const history = useHistory();
 
   const { dispatch } = useContext(ListContext);
   const { movies, dispatch: dispatchMovie } = useContext(MovieContext);
@@ -33,7 +31,6 @@ export default function NewList() {
     e.preventDefault();
     createList(list, dispatch);
     window.location.href="/lists";
-    // history.push("/lists");
   };
 
   return (

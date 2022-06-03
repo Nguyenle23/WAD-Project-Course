@@ -1,4 +1,7 @@
 import {
+  AssignmentTurnedInOutlined,
+  AttachMoney,
+  CalendarToday,
   LocationSearching,
   MailOutline,
   PermIdentity,
@@ -42,10 +45,6 @@ export default function User() {
       <Navbar />
       <div className="user">
         <div className="userTitleContainer">
-          {/* <h1 className="userTitle">Edit User - <i></i></h1> */}
-          {/* <Link to="/newUser">
-            <button className="userAddButton">Create</button>
-          </Link> */}
         </div>
         <div className="userContainer">
           <div className="userShow">
@@ -61,31 +60,43 @@ export default function User() {
               </div>
             </div>
             <div className="userShowBottom">
+              <div className="userShowInfo">
+                <AttachMoney className="userShowIcon" />
+                <span className="userShowInfoTitle">Total price: {dataUser.price || "Total prrice: None"} VNĐ</span>
+              </div>
+              <div className="userShowInfo">
+                <CalendarToday className="userShowIcon" />
+                <span className="userShowInfoTitle">Renewal date: {dataUser.beginDate || "Begin Date: None"}</span>
+              </div>
+              <div className="userShowInfo">
+                <CalendarToday className="userShowIcon" />
+                <span className="userShowInfoTitle">Expired date: {dataUser.expiredDate || "Expired Date: None"}</span>
+              </div>
               <span className="userShowTitle">Contact Details</span>
               <div className="userShowInfo">
                 <PermIdentity className="userShowIcon" />
-                <span className="userShowInfoTitle">{dataUser.gender || "Gender"}</span>
+                <span className="userShowInfoTitle">Gender: {dataUser.gender || "Gender"}</span>
               </div>
               <div className="userShowInfo">
                 <MailOutline className="userShowIcon" />
-                <span className="userShowInfoTitle">{dataUser.email || "Email"}</span>
+                <span className="userShowInfoTitle">Email: {dataUser.email || "Email"}</span>
               </div>
               <div className="userShowInfo">
                 <PhoneAndroid className="userShowIcon" />
-                <span className="userShowInfoTitle">{dataUser.phonenumber || "Phone"}</span>
+                <span className="userShowInfoTitle">Phone: {dataUser.phonenumber || "Phone"}</span>
               </div>
               <div className="userShowInfo">
                 <LocationSearching className="userShowIcon" />
-                <span className="userShowInfoTitle">{dataUser.location || "Location"}</span>
+                <span className="userShowInfoTitle">Region: {dataUser.location || "Location"}</span>
               </div>
             </div>
           </div>
           <div className="userUpdate">
-            <span className="userUpdateTitle">Customer profile</span>
+            <span className="userUpdateTitle">Profile - {dataUser.fullname || "Fullname"}</span>
             <form className="userUpdateForm">
               <div className="userUpdateLeft">
                 <div className="userUpdateItem">
-                  <label>Gender</label>
+                  <label>Gender:</label>
                   <select name="gender" id="gender" onChange={handleChange} className="selectInput">
                     {dataUser.gender === 'Male' ? 
                     <>
@@ -100,7 +111,7 @@ export default function User() {
                   </select>
                 </div>
                 <div className="userUpdateItem">
-                  <label>Full Name</label>
+                  <label>Full Name:</label>
                   <input
                     type="text"
                     placeholder={dataUser.fullname || "Empty"}
@@ -110,7 +121,7 @@ export default function User() {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Email</label>
+                  <label>Email:</label>
                   <input
                     type="text"
                     placeholder={dataUser.email || "Empty"}
@@ -120,7 +131,7 @@ export default function User() {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Phone</label>
+                  <label>Phone:</label>
                   <input
                     type="text"
                     placeholder={dataUser.phonenumber  || "Empty"}
@@ -130,7 +141,7 @@ export default function User() {
                   />
                 </div>
                 <div className="userUpdateItem">
-                  <label>Location</label>
+                  <label>Location:</label>
                   <select name="location" id="location" onChange={handleChange} className="selectInput">
                     <option>Location</option>
                     <option value="Vietnam">VIETNAM</option>
@@ -155,7 +166,7 @@ export default function User() {
                     className="uploadInput"
                   />
                 </div>
-                <button className="userUpdateBtn" onClick={handleSubmit}>Update</button>
+                <button className="userUpdateBtn" onClick={handleSubmit}>Save</button>
               </div>
             </form>
           </div>

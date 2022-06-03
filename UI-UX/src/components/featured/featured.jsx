@@ -45,10 +45,11 @@ export default function Featured({ type, setGenre }) {
               className="genreSelect"
             >
               <option>Genre</option>
-              <option value="adventure">Adventure</option>
               <option value="action">Action</option>
+              <option value="adventure">Adventure</option>
               <option value="drama">Drama</option>
               <option value="thriller">Thriller</option>
+              <option value="random">Random</option>
             </select>
           </div>
         )}

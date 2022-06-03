@@ -4,7 +4,7 @@ import NavBar from '../../components/navbar/navbar';
 import Featured from '../../components/featured/featured';
 import List from '../../components/list/list';
 import './home.scss';
-import {getRandomList} from '../../actions/index';
+import { getRandomList } from '../../actions/index';
 
 const Home = ({type}) => {
   const [lists, setLists] = useState([]);
@@ -14,7 +14,15 @@ const Home = ({type}) => {
       try {
         getRandomList(type, genre)
         .then(res => {
-          setLists(res.data);
+          var render
+          const listData = res.data
+          for (var i of listData) {
+              if (i.isDestroy === true) {
+                  render = listData.filter(list => list.isDestroy === false)
+              }
+              render = listData.filter(list => list.isDestroy === false)
+          }
+          setLists(render);
         });
       } catch (error) {
         console.log(error);

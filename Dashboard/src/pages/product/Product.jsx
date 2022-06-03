@@ -5,27 +5,31 @@ import "./product.css";
 import Chart from "../../components/chart/Chart"
 import {productData} from "../../dummyData"
 import { MovieContext } from "../../context/movieContext/MovieContext";
-import { updateMovie } from "../../context/movieContext/apiCall";
+// import { updateMovie } from "../../context/movieContext/apiCall";
+import { upgradeMovie } from "../../actions/index";
 
 export default function Product() {
     const location = useLocation();
     const movie = location.movie;
     const [updateMovieObject, setUpdateMovie] = useState(null);
-    
-    // const history = useHistory();
-
     const { dispatch } = useContext(MovieContext);
 
     const handleChange = (e) => {
         const value = e.target.value;
-        setUpdateMovie({ ...movie, [e.target.name]: value });
+        setUpdateMovie({...updateMovieObject, [e.target.name]: value});
     };
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        updateMovie(movie._id, updateMovieObject, dispatch);
+        upgradeMovie(movie._id, updateMovieObject, dispatch)
+            // .then((res) => {
+            //     console.log(res)
+            // //     dispatch({
+            // //         type: "UPDATE_USER_SUCCESS",
+            // //         payload: dataUser,
+            // //     });
+        // })
         window.location.href="/movies";
-        // history.push("/movies");
     };
 
     return (

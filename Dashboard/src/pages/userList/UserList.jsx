@@ -39,8 +39,8 @@ export default function UserList() {
     // { field: "location", headerName: "Location", width: 130 },
     {
       field: "isActive",
-      headerName: "Status",
-      width: 120,
+      headerName: "Is Active",
+      width: 140,
     },
     {
       field: "price",

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //get random list
 export const getRandomList = async(type, genre) => {
-    const request = await axios.get(`http://localhost:5555/list/${type ? '?type=' + type : ''}${genre ? '&genre=' + genre : ''}`, {
+    const request = await axios.get(`http://localhost:5555/list/randomList/${type ? '?type=' + type : ''}${genre ? '&genre=' + genre : ''}`, {
         headers: {
             token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         }

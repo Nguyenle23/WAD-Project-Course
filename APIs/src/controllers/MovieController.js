@@ -17,14 +17,7 @@ const createMovie = async(req, res) => {
 const updateMovie = async(req, res) => {
     if (req.user.isAdmin) {
         try {
-            const movie = await Movie.findByIdAndUpdate(req.params.id, req.body);
-            // console.log(movie)
-            // const updatedMovie = await Movie.findByIdAndUpdate(
-            //     req.params.id, {
-            //         $set: req.body,
-            //     }, { new: true }
-            // );
-            // res.status(200).json(updatedMovie);
+            await Movie.findByIdAndUpdate(req.params.id, req.body);
         } catch (err) {
             res.status(500).json(err);
         }

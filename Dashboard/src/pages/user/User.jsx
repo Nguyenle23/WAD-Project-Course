@@ -1,42 +1,41 @@
 import {
-  // CalendarToday,
+  AssignmentTurnedInOutlined,
+  AttachMoney,
+  CalendarToday,
   LocationSearching,
   MailOutline,
   PermIdentity,
   PhoneAndroid,
-  // Publish,
 } from "@material-ui/icons";
 import { useLocation } from "react-router-dom";
 import {useState, useContext} from 'react';
 import "./user.css";
 import { UserContext } from "../../context/userContext/UserContext";
-import { updateUser } from "../../context/userContext/apiCall";
+// import { updateUser } from "../../context/userContext/apiCall";
+import { upgradeUser } from "../../actions/index";
 
 export default function User() {
   const location = useLocation();
   const user = location.users;
   const [updateUserObject, setUpdateUser] = useState(null);
-  
-  // const history = useHistory();
-  
   const { dispatch } = useContext(UserContext);
 
   const handleChange = (e) => {
+    const getToken = JSON.parse(localStorage.getItem("user")).accessToken
     const value = e.target.value;
-    setUpdateUser({ ...user, [e.target.name]: value });
+    setUpdateUser({...updateUserObject, [e.target.name]: value, accessToken: getToken});
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateUser(user._id, updateUserObject, dispatch);
+    upgradeUser(user._id, updateUserObject, dispatch);
     window.location.href="/users";
-    // history.push("/users");
-};
+  };
 
   return (
     <div className="user">
       <div className="userTitleContainer">
-        <h1 className="userTitle">Edit User - <i>{user._id || "User_Id"}</i></h1>
+        {/* <h1 className="userTitle">Edit User - </h1> */}
         {/* <Link to="/newUser">
           <button className="userAddButton">Create</button>
         </Link> */}
@@ -55,36 +54,45 @@ export default function User() {
             </div>
           </div>
           <div className="userShowBottom">
-            {/* <span className="userShowTitle">Account Details</span>
+            <span className="userShowTitle">Account Details</span>
             <div className="userShowInfo">
-              <PermIdentity className="userShowIcon" />
-              <span className="userShowInfoTitle">annabeck99</span>
+              <AssignmentTurnedInOutlined className="userShowIcon" />
+              <span className="userShowInfoTitle">Is active: {user.isActive === true ? "Yes" : "No"}</span>
             </div>
             <div className="userShowInfo">
               <CalendarToday className="userShowIcon" />
-              <span className="userShowInfoTitle">10.12.1999</span>
-            </div> */}
-            <span className="userShowTitle">Contact Details</span>
+              <span className="userShowInfoTitle">Renewal date: {user.beginDate || "Begin Date: None"}</span>
+            </div>
+            <div className="userShowInfo">
+              <CalendarToday className="userShowIcon" />
+              <span className="userShowInfoTitle">Expired date: {user.expiredDate || "Expired Date: None"}</span>
+            </div>
+            <div className="userShowInfo">
+              <AttachMoney className="userShowIcon" />
+              <span className="userShowInfoTitle">Total price: {user.price || "Total prrice: None"} VNĐ</span>
+            </div>
+            <span className="userShowTitle">Contact Details
+            </span>
             <div className="userShowInfo">
               <PermIdentity className="userShowIcon" />
-              <span className="userShowInfoTitle">{user.gender || "Gender: None"}</span>
+              <span className="userShowInfoTitle">Gender: {user.gender || "Gender: None"}</span>
             </div>
             <div className="userShowInfo">
               <PhoneAndroid className="userShowIcon" />
-              <span className="userShowInfoTitle">{user.phonenumber || "Phone: None"}</span>
+              <span className="userShowInfoTitle">Phone: {user.phonenumber || "Phone: None"}</span>
             </div>
             <div className="userShowInfo">
               <MailOutline className="userShowIcon" />
-              <span className="userShowInfoTitle">{user.email || "Email: None"}</span>
+              <span className="userShowInfoTitle">Email: {user.email || "Email: None"}</span>
             </div>
             <div className="userShowInfo">
               <LocationSearching className="userShowIcon" />
-              <span className="userShowInfoTitle">{user.location || "Location: None"}</span>
+              <span className="userShowInfoTitle">Region: {user.location || "Location: None"}</span>
             </div>
           </div>
         </div>
         <div className="userUpdate">
-          <span className="userUpdateTitle">Edit</span>
+          <span className="userUpdateTitle">Profile - <i>{user._id || "User_Id"}</i></span>
           <form className="userUpdateForm">
             <div className="userUpdateLeft">
               <div className="userUpdateItem">

@@ -102,6 +102,16 @@ export const uploadList = async(movie) => {
     return request;
 }
 
+//update list
+export const upgradeList = async(id, data) => {
+    const request = await axios.put(`http://localhost:5555/list/${id}`, data, {
+        headers: {
+            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        }
+    });
+    return request;
+}
+
 //delete solfly list
 export const removeList = async(id) => {
     const request = await axios.delete(`http://localhost:5555/list/${id}`, {
@@ -126,7 +136,7 @@ export const getAllUser = async() => {
 
 //update user
 export const upgradeUser = async(id, data) => {
-    const request = await axios.put(`http://localhost:5555/user/updateUser/${id}`, data, {
+    const request = await axios.put(`http://localhost:5555/user/${id}`, data, {
         headers: {
             token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
         }

@@ -161,6 +161,8 @@ const login = async(req, res) => {
         const validPassword = await bcrypt.compare(req.body.password, user.password);
         if (!validPassword) return res.status(401).json('Invalid password');
 
+        if (user.isDestroy === true) return res.status(401).json('Your account has been deleted, please register again');
+
         if (user.isActive === false) {
             try {
                 var userPrice = user.price;

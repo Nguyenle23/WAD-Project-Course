@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken');
 
 const userModel = require('../models/User');
 
-const updateUser = async(req, res) => {
+const updateUserAdmin = async(req, res) => {
     if (req.user.isAdmin) {
         if (req.body.password) {
             const salt = await bcrypt.genSalt(10);
@@ -18,7 +18,7 @@ const updateUser = async(req, res) => {
             return res.status(500).json(err);
         }
     } else {
-        return res.status(403).json("You can update only your account!");
+        return res.status(403).json("You can not customer account!");
     }
 };
 
@@ -122,7 +122,7 @@ const removeUser = async(req, res) => {
     }
 }
 
-const updateUserAdmin = async(req, res) => {
+const updateUser = async(req, res) => {
     try {
         const accessToken = req.body.accessToken;
         const decoded = jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET);
