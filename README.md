@@ -13,11 +13,12 @@
        <ul>
         <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/APIs">APIs</a></li>
         <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/Dashboard">Dashboard</a></li>
-        <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/UI-UX">UI-UX</a></li>
+        <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/UI-UX">Client</a></li>
        </ul>
     </li>
     <li><a href="#technologies">Technologies</a></li>
     <li><a href="#folder-structure">Folder Structure</a></li>
+    <li><a href="#screenshot">Screenshot</a></li>
 <!--     <li><a href="#roadmap">Roadmap</a></li> -->
   </ol>
 </details>
@@ -26,13 +27,13 @@
 
 - **Server** : Contains an API for netflix, created by Node.js, Express and MongoDB. Using RESTful APIs.
 - **Dashboard** : The management admin page, created with React, and Material UI.
-- **UI-UX** : The client for user, built with React, and Material UI.
+- **Client** : The client for user, built with React, and Material UI.
 
 <h2 id="features"> 📋 Features</h2>
 
 List the ready features here:
 
-| Field | UI-UX | Dashboard | 
+| Field | Client | Dashboard | 
 | ----- | ----- | --------- | 
 | User  | Register - Login - Logout account | Login - Update - Delete - Statis - Logout account |
 | Movie | Watch - Random - Filter type of video | Create - Update - Delete video |
@@ -43,7 +44,7 @@ List the ready features here:
   <ul>
     <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/APIs">APIs</a></li>
     <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/Dashboard">Dashboard</a></li>
-    <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/UI-UX">UI-UX</a></li>
+    <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/UI-UX">Client</a></li>
   </ul>
 
 <h2 id="technologies"> 🖥️ Technologies</h2>
@@ -67,7 +68,7 @@ List the ready features here:
 | react-router-dom | [plugins/react-router/README.md](https://github.com/ReactTraining/react-router/blob/master/README.md) |
 | recharts | [plugins/recharts/README.md](https://github.com/recharts/recharts/blob/master/README.md) |
 
-### - UI-UX
+### - Client
 
 | Plugin | README |
 | ------ | ------ |
@@ -106,8 +107,20 @@ List the ready features here:
     │   │   ├── App.js
     │   │   ├── index.js
 
-## Screenshots
-![Example screenshot](./img/screenshot.png)
+<h2 id="screenshot"> 📸 Screenshots </h2>
+
+### Client
+|                                        Login                                        |                                        Register                                |                                        Forget Password                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/login.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/register.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/forgetPass.png) |
+
+|                                        Home Page                                        |                                        Profile                                |                                        Payment                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/home.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/profile.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/paid.png) |
+
+|                                        List Movie                                        |                                        Info UI                                |                                        Watch UI                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/listMovie.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/infoUI.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/watchUI.png) |
 
 ## Acknowledgements
 Give credit here.
