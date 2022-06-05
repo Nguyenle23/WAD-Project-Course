@@ -58,7 +58,7 @@ export default function Watch() {
         <DefaultUi noControls>
           <DefaultControls hideOnMouseLeave activeDuration={2000} />
 
-          <Settings>
+          {/* <Settings>
             <Submenu label="Movie Audio" hint="English" >
               <MenuRadioGroup value={value} onVmCheck={onCheck}>
                 <MenuItem label="English" />
@@ -90,8 +90,8 @@ export default function Watch() {
                 <MenuItem label="German" />
               </MenuRadioGroup>
             </Submenu>
+          </Settings> */}
 
-          </Settings>
         </DefaultUi>
       </Player>
     </div>

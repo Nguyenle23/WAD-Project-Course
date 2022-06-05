@@ -48,6 +48,19 @@ const findMovie = async(req, res) => {
     }
 }
 
+const searchMovie = async(req, res) => {
+    const q = req.query.q;
+    let movie = await Movie.find();
+    if (q) {
+        result = movie.filter((m) => {
+            return m.title.toLowerCase().indexOf(q.toLowerCase()) !== -1 || m.year.toLowerCase().indexOf(q.toLowerCase()) !== -1 || m.limit.toLowerCase().indexOf(q.toLowerCase()) !== -1 || m.genre.toLowerCase().indexOf(q.toLowerCase()) !== -1
+        })
+        res.status(200).json(result);
+    } else {
+        res.status(203).json([]);
+    }
+}
+
 const findAllMovie = async(req, res) => {
     if (req.user.isAdmin) {
         try {
@@ -82,4 +95,4 @@ const findRandomMovie = async(req, res) => {
     }
 }
 
-module.exports = { createMovie, updateMovie, deleteMovie, findMovie, findAllMovie, findRandomMovie };
+module.exports = { createMovie, updateMovie, deleteMovie, findMovie, searchMovie, findAllMovie, findRandomMovie };

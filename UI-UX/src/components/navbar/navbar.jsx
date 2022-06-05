@@ -4,13 +4,21 @@ import { Link } from 'react-router-dom';
 import { logout } from "../../authContext/AuthAction";
 import './navbar.scss';
 import { AuthContext } from '../../authContext/AuthContext';
+import SearchNav from '../../components/search/search';
+import { searchMovie } from '../../actions/index';
 
-const Navbar = () => {
+export default function Navbar({ childToParent }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const { dispatch } = useContext(AuthContext);
   const { user } = useContext(AuthContext);
 
-  // const users = user;
+  const handleSearchChange = (newSearch) => {
+    searchMovie(newSearch)
+      .then((res) => {
+        childToParent(res.data);
+      })
+  }
 
   const handleLogout = () => {
     dispatch(logout());
@@ -44,7 +52,21 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="right">
-            <Search className="icon" />
+            <div className="search">
+              {isOpen ? (
+                // <input 
+                //   type="text" 
+                //   placeholder="Search" 
+                //   className="searchInput" 
+                //   value={keyword}  
+                //   onChange={handleInputChange}
+                // />
+                <SearchNav onSubmit={handleSearchChange} />
+              ) : (
+                ''
+              )}
+              <Search className="icon" onClick={() => setIsOpen(!isOpen)}/>
+            </div>
             {/* <span>KID</span>
             <Notifications className="icon" /> */}
             <img src={user.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"} alt="" />  
@@ -65,4 +87,3 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;

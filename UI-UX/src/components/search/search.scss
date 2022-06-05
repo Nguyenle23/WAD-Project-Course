@@ -1,0 +1,23 @@
+.right {
+    align-items: center;
+    .search {
+        display: flex;
+        .searchInput {
+            display: inline-flex;
+            align-items: center;
+            width: 200px;
+            height: 30px;
+            border: 1px solid rgb(81, 74, 74);
+            outline: none;
+            border-radius: 5px;
+            padding: 0px 10px;
+            background-color: var(--main-color);
+            opacity: 0.8;
+            color: white;
+            font-size: 14px;
+            &::placeholder {
+                color: white;
+            }
+        }
+    }
+}

@@ -10,6 +10,16 @@ export const getRandomList = async(type, genre) => {
     return request;
 }
 
+//search movie 
+export const searchMovie = async(query) => {
+    const request = await axios.get(`http://localhost:5555/movie/search?q=${query}`, {
+        headers: {
+            token: "Bearer " + JSON.parse(localStorage.getItem("user")).accessToken,
+        }
+    });
+    return request;
+}
+
 //get movie
 export const getMovie = async(item) => {
     const request = await axios.get(`http://localhost:5555/movie/find/${item}`, {

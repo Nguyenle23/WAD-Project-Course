@@ -10,7 +10,7 @@ router.put('/:id', verify, movieController.updateMovie);
 router.delete('/:id', verify, movieController.deleteMovie);
 router.get('/find/:id', verify, movieController.findMovie);
 router.get('/', verify, movieController.findAllMovie);
+router.get('/search', verify, movieController.searchMovie);
 router.get('/random', verify, movieController.findRandomMovie);
-
 
 module.exports = router;

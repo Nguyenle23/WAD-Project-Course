@@ -6,10 +6,19 @@ import List from '../../components/list/list';
 import './home.scss';
 import { getRandomList } from '../../actions/index';
 
-const Home = ({type}) => {
+const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
   const [genre, setGenre] = useState('');
+  const [filter, setFilter] = useState([]);
 
+  const childToParent = (data) => {
+    if (data.length === 0 || data === []) {
+      alert('No results found');
+    } else {
+      setFilter(data);
+    }
+  }
+  
   useEffect(() => {
       try {
         getRandomList(type, genre)
@@ -31,14 +40,18 @@ const Home = ({type}) => {
 
   return (
     <div className="home">
-      <NavBar />
+      <NavBar childToParent={childToParent}/>
       <Featured type={type} setGenre={setGenre}/>
+      {filter.map((filter) => (
+        <h1>{filter.title}</h1>
+      ))}
       {lists.length === 0 ?
         <div className="notice">No {type} for this genre <strong>{genre}</strong></div>
       :
-      lists.map((list, index) => (
-        <List key={index} list={list} />
-      ))}
+        lists.map((list, index) => (
+          <List key={index} list={list} />
+        ))
+      }
     </div>
   );
 };
