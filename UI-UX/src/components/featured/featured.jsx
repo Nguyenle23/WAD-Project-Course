@@ -11,7 +11,6 @@ export default function Featured({ type, setGenre }) {
   const [content, setContent] = useState({});
 
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -113,19 +112,19 @@ export default function Featured({ type, setGenre }) {
             </Row>
             <Row>
               <Col xs={12}>
-                <span className="">Info On </span>
-                <span className="title">{content.title}</span>
+                <span className="list">Limit: </span>
+                <span className="content">{content.limit}+</span>
               </Col>
               <Col xs={12}>
-                <span className="list">Genres: </span>
+                <span className="list">Genre: </span>
                 <span className="content">{content.genre}</span>
               </Col>
               <Col xs={12}>
-                <span className="list">Release date: </span>
+                <span className="list">Release year: </span>
                 <span className="content">{content.year}</span>
               </Col>
               <Col xs={12}>
-                <span className="list">Times: </span>
+                <span className="list">Duration: </span>
                 <span className="content">{content.duration}</span>
               </Col>
             </Row>

@@ -39,7 +39,7 @@ const Home = ({ type }) => {
   }, [type, genre]);
 
   return (
-    <div className="home">
+    <div className="homeContainer">
       <NavBar childToParent={childToParent}/>
       <Featured type={type} setGenre={setGenre}/>
       {filter.map((filter) => (

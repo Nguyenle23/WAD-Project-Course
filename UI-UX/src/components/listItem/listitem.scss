@@ -57,9 +57,19 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
                 .icons {
                     display: flex;
                     margin-bottom: 10px;
+                    .playIcon {
+                        &:hover {
+                            border-color: #E50914;
+                            color: #E50914;
+                        }
+                    }
                     .icon {
                         border: 2px solid white;
                         padding: 5px;
