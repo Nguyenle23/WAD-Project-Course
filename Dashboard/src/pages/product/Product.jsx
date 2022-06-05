@@ -12,11 +12,17 @@ export default function Product() {
     const location = useLocation();
     const movie = location.movie;
     const [updateMovieObject, setUpdateMovie] = useState(null);
+    const [subtitle, setSubtitle] = useState(null);
     const { dispatch } = useContext(MovieContext);
+
+    const handleInput = (e) => {
+        const value = e.target.value;
+        setSubtitle({...subtitle, [e.target.name]: value});
+    }
 
     const handleChange = (e) => {
         const value = e.target.value;
-        setUpdateMovie({...updateMovieObject, [e.target.name]: value});
+        setUpdateMovie({...updateMovieObject, [e.target.name]: value, subtitle});
     };
 
     const handleSubmit = (e) => {
@@ -110,6 +116,10 @@ export default function Product() {
                     <input className="form-input" type="text" placeholder={movie.trailer} name="trailer" onChange={handleChange}/>
                     <label>Video</label>
                     <input className="form-input" type="text" placeholder={movie.video} name="video" onChange={handleChange}/>
+                    <label>Subtitles</label>
+                    <input type="text" name="vi" onChange={handleInput} placeholder={movie.subtitle.vi || 'Empty'} />
+                    <input type="text" name="en" onChange={handleInput} placeholder={movie.subtitle.en || 'Empty'} />
+                    <input type="text" name="indo" onChange={handleInput} placeholder={movie.subtitle.indo || 'Empty'} />
                 </div>
                 <div className="product-img-container">
                     <div className="product-imgs">

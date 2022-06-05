@@ -30,7 +30,6 @@ export default function Movie() {
 
   const location = useLocation();
   const contentData = location.state.content;
-  console.log(contentData.subtitle);
 
   return (
     <div className="movie">
@@ -42,7 +41,7 @@ export default function Movie() {
       </Link>
 
       <Player>
-        <Video poster={contentData.img}>
+        <Video poster={contentData.img} crossOrigin="anonymous">
           <source
             data-src={contentData.video}
             type="video/mp4"
@@ -50,9 +49,23 @@ export default function Movie() {
           <track
             default
             kind="subtitles"
-            src="https://media.vimejs.com/subs/english.vtt"
+            src={contentData.subtitle.en}
             srcLang="en"
             label="English"
+          />
+          <track
+            default
+            kind="subtitles"
+            src={contentData.subtitle.indo}
+            srcLang="id"
+            label="Indonesia"
+          />
+          <track
+            default
+            kind="subtitles"
+            src={contentData.subtitle.vi}
+            srcLang="vi"
+            label="Vietnamese"
           />
         </Video>
       

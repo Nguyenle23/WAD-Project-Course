@@ -30,7 +30,7 @@ export default function Watch() {
   };
   const location = useLocation();
   const movieData = location.state.movie;
-
+  
   return (
     <div className="watch">
       <Link to="/">
@@ -41,7 +41,7 @@ export default function Watch() {
       </Link>
 
       <Player>
-        <Video className="video" crossOrigin="" >
+        <Video className="video" crossOrigin="anonymous">
           <source
             data-src={movieData.trailer}
             type="video/mp4"
@@ -49,9 +49,23 @@ export default function Watch() {
           <track
             default
             kind="subtitles"
-            src="https://media.vimejs.com/subs/english.vtt"
+            src={movieData.subtitle.en}
             srcLang="en"
             label="English"
+          />
+          <track
+            default
+            kind="subtitles"
+            src={movieData.subtitle.indo}
+            srcLang="id"
+            label="Indonesia"
+          />
+          <track
+            default
+            kind="subtitles"
+            src={movieData.subtitle.vi}
+            srcLang="vi"
+            label="Vietnamese"
           />
         </Video>
       

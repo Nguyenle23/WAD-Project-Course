@@ -1,5 +1,4 @@
 import {useState, useContext} from 'react';
-// import {useHistory} from 'react-router-dom';
 
 import "./newProduct.css";
 import { MovieContext } from "../../context/movieContext/MovieContext";
@@ -7,13 +6,18 @@ import { createMovie } from "../../context/movieContext/apiCall";
 
 export default function NewProduct() {
   const [movie, setMovie] = useState(null);
-  // const history = useHistory();
+  const [subtitle, setSubtitle] = useState(null);
 
   const { dispatch } = useContext(MovieContext);
 
+  const handleInput = (e) => {
+    const value = e.target.value;
+    setSubtitle({...subtitle, [e.target.name]: value});
+  }
+
   const handleChange = (e) => {
     const value = e.target.value;
-    setMovie({ ...movie, [e.target.name]: value });
+    setMovie({ ...movie, [e.target.name]: value, subtitle });
   }; 
 
   const handleSubmit = (e) => {
@@ -77,6 +81,12 @@ export default function NewProduct() {
         <div className="addProductItem">
           <label>Video</label>
           <input type="text" name="video" onChange={handleChange} placeholder="Url video" />
+        </div>
+        <div className="addProductItem">
+          <label>Subtitles</label>
+          <input type="text" name="vi" onChange={handleInput} placeholder="VietSub" />
+          <input type="text" name="en" onChange={handleInput} placeholder="EngSub" />
+          <input type="text" name="indo" onChange={handleInput} placeholder="IndoSub" />
         </div>
         <button className="addProductButton" onClick={handleSubmit}>Create</button>
       </form>

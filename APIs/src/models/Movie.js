@@ -15,6 +15,14 @@ const Movie = new Schema({
     genre: { type: String },
     isSeries: { type: Boolean, default: false },
     isDestroy: { type: Boolean, default: false },
+    subtitle: {
+        type: Object,
+        default: {
+            en: { type: String },
+            vi: { type: String },
+            indo: { type: String },
+        }
+    },
 }, {
     timestamps: true
 })
