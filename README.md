@@ -35,9 +35,9 @@ List the ready features here:
 
 | Field | Client | Dashboard | 
 | ----- | ----- | --------- | 
-| User  | Register - Login - Logout account | Login - Update - Delete - Statis - Logout account |
-| Movie | Watch - Random - Filter type of video | Create - Update - Delete video |
-| List  | Wacth trailer - Filter genre of list | Create - Update - Delete - Random list |
+| User  | Register - Login - Logout - Forget account | Login - Update - Delete - Statis - Logout account |
+| Movie | Watch - Random - Filter type of video - Search - Subtitles - Speed up movie | Create - Update - Delete - Random movie |
+| List  | Watch trailer - Filter genre of list | Create - Update - Delete - Random list |
 
 <h2 id="setup"> 🧰 Setup</h2>
 
@@ -57,6 +57,7 @@ List the ready features here:
 | jsonwebtoken | [plugins/jsonwebtoken/README.md](https://github.com/auth0/node-jsonwebtoken/blob/master/README.md) |
 | mongoose | [plugins/mongoose/README.md](https://github.com/Automattic/mongoose/blob/master/README.md) |
 | nodemon | [plugins/nodemon/README.md](https://github.com/remy/nodemon/blob/master/README.md) |
+| cloudinary | [plugins/cloudinary/README.md](https://github.com/cloudinary) |
 
 ### - Dashboard 
 
@@ -121,6 +122,23 @@ List the ready features here:
 |                                        List Movie                                        |                                        Info UI                                |                                        Watch UI                                        |
 | :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/listMovie.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/infoUI.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/watchUI.png) |
+
+### Admin
+|                                        Login                                        |                                        Home Page                              |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: |
+| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/login.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/home.png) | 
+
+|                                        User List                                        |                                        Update User                                |                                        User Statistics                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/userList.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/userEdit.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/statisticUser.png) |
+
+|                                        Movie List                                        |                                        Update Movie                                |                                        Create Movie                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/movieList.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/movieEdit.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/createMovie.png) |
+
+|                                        List List                                        |                                        Update List                                |                                        Create List                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/listList.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/listEdit.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/createList.png) |
 
 ## Acknowledgements
 Give credit here.
