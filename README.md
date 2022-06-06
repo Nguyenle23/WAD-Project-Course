@@ -19,6 +19,7 @@
     <li><a href="#technologies">Technologies</a></li>
     <li><a href="#folder-structure">Folder Structure</a></li>
     <li><a href="#screenshot">Screenshot</a></li>
+    <li><a href="#acknowledge">Acknowledge</a></li>
 <!--     <li><a href="#roadmap">Roadmap</a></li> -->
   </ol>
 </details>
@@ -140,8 +141,10 @@ List the ready features here:
 | :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/listList.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/listEdit.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/createList.png) |
 
-## Acknowledgements
-Give credit here.
-- This project was inspired by...
-- This project was based on [this tutorial](https://www.example.com).
-- Many thanks to...
+<h2 id="acknowledge"> 💼 Acknowledgement </h2>
+
+- This project was based on [this tutorial](https://www.youtube.com/watch?v=tsNswx0nRKM&t=9099s&ab_channel=LamaDev).
+### Future Features
+- Creating features My List
+- Improving search movies and developing search list 
+- Building quickly change user
