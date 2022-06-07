@@ -4,6 +4,12 @@
 
 # Introduction
 - Netflix from <strong>N.N.S</strong>
+<h4>Member</h4>
+| Number | ID | Name | Task allocation | 
+| ----- | ----- | --------- | --------- | 
+| 1  | ITITIU19169 | Lê Nguyễn Bình Nguyên | API + Database | 
+| 2 | ITITWE19024 | Dương Minh Nhựt | User Interface |
+| 3  |  ITITIU19067 | Lê Hữu Sỹ | Dashboard Interface |
 
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
 <details open="open">
