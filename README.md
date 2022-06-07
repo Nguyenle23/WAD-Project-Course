@@ -1,6 +1,6 @@
 # Netflix-MERN
 > The project for Web Application Developement course.
-You are the ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix-mern)! Thanks for your visit!
+You are the ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix-mern)!
 
 # Introduction
 - Netflix from <strong>N.N.S</strong>
