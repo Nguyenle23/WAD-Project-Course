@@ -131,17 +131,9 @@ List the ready features here:
 
 <h3> Sequence diagram </h3> 
 
-### - Register 
-
-![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence1.png)
-
-### - Watch 
-
-![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence2.png)
-
-### - Subcribe
-
-![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence3.png)
+|                                        Register                                        |                                        Watch                                |                                        Subcribe                                        |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence1.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence2.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence3.png) |
 
 
 <h2 id="screenshot"> 📸 Screenshots </h2>
