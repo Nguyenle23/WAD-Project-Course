@@ -1,12 +1,11 @@
-.loginForm {
+.login {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient( to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("https://assets.nflxext.com/ffe/siteui/vlv3/970e664f-2df4-47ce-b4fa-446082f5abc1/fd873ca8-2d92-4212-a5e2-82f07089566a/VN-vi-20220523-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+    background: linear-gradient( to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), url("https://browsecat.net/sites/default/files/netflix-background-128505-385456-9916359.png");
     background-size: cover;
     position: relative;
-    .headerLogin {
-        background: linear-gradient(to bottom, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, 0) 100%);
-        .wrapperLogin {
+    .top {
+        .wrapper {
             padding: 20px 50px;
             display: flex;
             align-items: center;
@@ -16,7 +15,7 @@
             }
         }
     }
-    .containerLogin {
+    .container {
         width: 100%;
         height: 100%;
         position: absolute;
@@ -27,126 +26,42 @@
         align-items: center;
         justify-content: center;
         color: white;
-        .formLogin {
-            box-sizing: content-box;
-            padding: 50px 40px 40px;
-            margin-bottom: 70px;
+        form {
             width: 300px;
-            height: 400px;
-            /* padding: 30px; */
+            height: 300px;
+            padding: 30px;
             border-radius: 5px;
-            background-color: rgba(0, 0, 0, 0.78);
+            background-color: var(--main-color);
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            .loginStatus {
-                text-align: center;
-                color: yellow;
-                margin-bottom: -5px;
-                text-transform: uppercase;
-            }
-            .inputLogin {
-                outline: none;
-                border: none;
-                height: 50px;
-                border-radius: 4px;
-                background: #333;
-                color: #fff;
-                /* padding-left: 10px; */
-                padding: 16px 20px;
+            input {
+                height: 40px;
+                border-radius: 5px;
+                background-color: white;
+                color: black;
+                padding-left: 10px;
                 &::placeholder {
-                    color: #8c8c8c;
+                    color: lightgray;
                 }
             }
-            .loginButton {
-                margin-top: 5px;
+            button {
                 height: 40px;
                 border-radius: 5px;
-                background-color: rgb(190, 16, 16);
+                background-color: red;
                 color: white;
                 border: none;
                 font-size: 18px;
                 font-weight: 500;
                 cursor: pointer;
-                &:hover {
-                    background-color: rgba(190, 16, 16, 0.9);
-                }
             }
-            .sendBtn {
-                margin-top: -40px;
-                height: 40px;
-                border-radius: 5px;
-                background-color: rgb(190, 16, 16);
-                color: white;
-                border: none;
-                font-size: 18px;
-                font-weight: 500;
-                cursor: pointer;
-                &:hover {
-                    background-color: rgba(190, 16, 16, 0.9);
-                }
-            }
-            .status {
-                text-align: center;
-                color: yellow;
-                margin-bottom: -19px;
-                text-transform: uppercase;
-            }
-            .forgotLogin {
-                display: flex;
-                justify-content: end;
-                .re-sub {
-                    color: yellow;
-                    font-size: 14px;
-                    text-decoration: none;
-                    margin-top: -8px;
-                    margin-left: 126px;
-                    border: none;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-                .forgot {
-                    background-color: transparent;
-                    color: lightgray;
-                    font-size: 14px;
-                    text-decoration: none;
-                    display: block;
-                    text-align: right;
-                    margin-top: -8px;
-                    border: none;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-                .signIn {
-                    background-color: transparent;
-                    color: lightgray;
-                    font-size: 14px;
-                    text-decoration: none;
-                    display: block;
-                    text-align: right;
-                    margin-top: -60px;
-                    border: none;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-            }
-            .breifLogin,
-            .policy {
-                margin-top: 10px;
+            span {
                 color: lightgray;
-                user-select: none;
                 b {
                     color: white;
                 }
                 .signUp {
                     text-decoration: none;
-                    &:hover {
-                        text-decoration: underline;
-                        text-decoration-color: white;
-                    }
                 }
             }
         }

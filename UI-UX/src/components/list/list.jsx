@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import ListItem from '../listItem/listitem';
 import './list.scss';
 
-export default function List({ list }) {
+export default function List({list}) {
   const [isMoved, setIsMoved] = useState(false);
   const [slideNumber, setSlideNumber] = useState(0);
   const [clickLimit, setClickLimit] = useState(window.innerWidth / 230);
@@ -23,7 +23,7 @@ export default function List({ list }) {
       listRef.current.style.transform = `translateX(${-230 + distance}px)`;
     }
   };
-
+  
   return (
     <div className="list">
       <span className="listTitle">{list.title}</span>

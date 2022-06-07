@@ -31,77 +31,41 @@
             height: 140px;
         }
         .itemInfo {
-            position: relative;
             display: flex;
             flex-direction: column;
-            padding: 8px 12px;
-            .title {
-                position: absolute;
-                top: -30px;
-                font-size: 1rem;
-                font-weight: bold;
-                color: white;
-                margin-right: 6px;
+            padding: 5px;
+            .icons {
+                display: flex;
+                margin-bottom: 10px;
+                .icon {
+                    border: 2px solid white;
+                    padding: 5px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                    font-size: 16px;
+                }
             }
-            .limit {
-                position: absolute;
-                top: -130px;
-                right: 15px;
-                border: 1px solid gray;
-                padding: 1px 3px;
+            .itemInfoTop {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
                 font-size: 14px;
                 font-weight: 600;
                 color: gray;
+                .limit {
+                    border: 1px solid gray;
+                    padding: 1px 3px;
+                    margin: 0 10px;
+                }
             }
-            .movie-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                a {
-                    color: #fff;
-                    text-decoration: none;
-                }
-                .icons {
-                    display: flex;
-                    margin-bottom: 10px;
-                    .playIcon {
-                        &:hover {
-                            border-color: #E50914;
-                            color: #E50914;
-                        }
-                    }
-                    .icon {
-                        border: 2px solid white;
-                        padding: 5px;
-                        border-radius: 50%;
-                        margin-right: 10px;
-                        font-size: 26px;
-                    }
-                }
-                .itemInfoTop {
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 10px;
-                    font-size: 14px;
-                    font-weight: 600;
-                    color: gray;
-                    span {
-                        margin-right: 3px;
-                    }
-                }
+            .desc {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+            .genre {
+                font-size: 14px;
+                color: lightgray;
             }
         }
     }
-}
-
-.desc {
-    font-size: 0.8rem;
-    margin-bottom: 10px;
-}
-
-.genre {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: rgb(152, 151, 151);
-    margin-bottom: 3px;
 }

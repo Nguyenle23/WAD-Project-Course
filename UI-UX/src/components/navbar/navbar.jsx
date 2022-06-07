@@ -1,29 +1,13 @@
-import { ArrowDropDown, Search } from '@material-ui/icons';
+import { ArrowDropDown, Notifications, Search } from '@material-ui/icons';
 import React, { useState, useContext} from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import { AuthContext } from "../../authContext/AuthContext";
 import { logout } from "../../authContext/AuthAction";
 import './navbar.scss';
-import { AuthContext } from '../../authContext/AuthContext';
-import SearchNav from '../../components/search/search';
-import { searchMovie } from '../../actions/index';
 
-export default function Navbar({ childToParent }) {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
   const { dispatch } = useContext(AuthContext);
-  const { user } = useContext(AuthContext);
-
-  const handleSearchChange = (newSearch) => {
-    searchMovie(newSearch)
-      .then((res) => {
-        childToParent(res.data);
-      })
-  }
-
-  const handleLogout = () => {
-    dispatch(logout());
-    window.location.href="/login";
-  }
 
   window.onscroll = () => {
     setIsScrolled(window.pageYOffset === 0 ? false : true);
@@ -31,54 +15,38 @@ export default function Navbar({ childToParent }) {
   };
 
   return (
-    <div className={isScrolled ? "navbarNetflix scrolled" : "navbarNetflix"}>
-        <div className="containerNetflix">
+    <div className={isScrolled ? "navbar scrolled" : "navbar"}>
+        <div className="container">
           <div className="left">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2560px-Netflix_2015_logo.svg.png"
               alt=""
             ></img>
-            <Link to="/" onClick={() => window.location.href="/"} className="link">
+            <Link to="/" className="link">
             <span>Homepage</span>
             </Link>
-            <Link to="/series" onClick={() => window.location.href="/series"} className="link">
+            <Link to="/series" className="link">
             <span>Series</span>
             </Link>
-            <Link to="/movies" onClick={() => window.location.href="/movies"} className="link">
+            <Link to="/movies" className="link">
             <span>Movies</span>
             </Link>
-            <Link to="/newandtrending" onClick={() => window.location.href="/newandtrending"} className="link">
             <span>New and Popular </span>
-            </Link>
+            <span>My List</span>
           </div>
           <div className="right">
-            <div className="search">
-              {isOpen ? (
-                // <input 
-                //   type="text" 
-                //   placeholder="Search" 
-                //   className="searchInput" 
-                //   value={keyword}  
-                //   onChange={handleInputChange}
-                // />
-                <SearchNav onSubmit={handleSearchChange} />
-              ) : (
-                ''
-              )}
-              <Search className="icon" onClick={() => setIsOpen(!isOpen)}/>
-            </div>
-            {/* <span>KID</span>
-            <Notifications className="icon" /> */}
-            <img src={user.avatar || "https://pbs.twimg.com/media/D8tCa48VsAA4lxn.jpg"} alt="" />  
+            <Search className="icon" />
+            <span>KID</span>
+            <Notifications className="icon" />
+            <img
+              src="https://images.pexels.com/photos/6899260/pexels-photo-6899260.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              alt=""
+            />
             <div className="profile">
               <ArrowDropDown className="icon" />
               <div className="options">
-                <span>
-                  <Link to={{pathname: "/user/" + user._id}} state={{ user }}>
-                    Profile
-                  </Link>
-                </span>
-                <span onClick={handleLogout}>Logout</span>
+                <span>Settings</span>
+                <span onClick={() => dispatch(logout())}>Logout</span>
               </div>
             </div>
           </div>
@@ -87,3 +55,4 @@ export default function Navbar({ childToParent }) {
   );
 };
 
+export default Navbar;
