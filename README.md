@@ -125,7 +125,7 @@ List the ready features here:
     
 <h2 id="diagram"> 🖥 Diagrams </h2>
 
-<h3> Class diagram </h3> 
+<h3> Use case diagram </h3> 
 
 ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/usecase.png)
 
