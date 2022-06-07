@@ -8,9 +8,10 @@ You are the ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix
 
 | Number | ID | Name | Task allocation | 
 | ----- | ----- | --------- | --------- | 
-| 1  | ITITIU19169 | Lê Nguyễn Bình Nguyên | API + Database | 
-| 2 | ITITWE19024 | Dương Minh Nhựt | React User Interface |
-| 3  |  ITITIU19067 | Lê Hữu Sỹ | React Dashboard Interface |
+| 1  | ITITIU19169 | .[Lê Nguyễn Bình Nguyên]https://github.com/Nguyenle23 | API + Database | 
+| 2 | ITITWE19024 | .[Dương Minh Nhựt].https://github.com/mnhwt0108 | React User Interface |
+| 3  |  ITITIU19067 | .[Lê Hữu Sỹ].https://github.com/Ted1804 | React Dashboard Interface |
+
 
 <h4>Motivation</h4> 
 <p>Our team originally planned to implement an issues tracker project to create a website to track the progress of a job or a project. However, the project was put on a hold since we did not found it captivating and that we wanted a more practical web application.
