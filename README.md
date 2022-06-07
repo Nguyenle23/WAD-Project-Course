@@ -12,6 +12,10 @@ You are the ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix
 | 2 | ITITWE19024 | Dương Minh Nhựt | React User Interface |
 | 3  |  ITITIU19067 | Lê Hữu Sỹ | React Dashboard Interface |
 
+<h4>Motivation</h4> 
+<p>Our team originally planned to do a bug tracker project to create a website to track the progress of a job or a project. However, the project was stopped because the team did not understand and did not share the same interests.
+And finally, we chose to clone a very popular movie site: Netflix. This gives us inspiration when implementing because the whole team has the same hobby of watching movies. And at the same time, the project has more opportunities for each member to develop programming skills to guide the career path.</p> 
+
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
 <details open="open">
   <summary>Table of Contents</summary>
