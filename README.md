@@ -148,7 +148,7 @@ List the ready features here:
 | :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/home.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/profile.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/paid.png) |
 
-|                                        List Movie                                        |                                        Info UI                                |                                        Watch UI                                        |
+|                                        List Movie                                        |                                        Info                                |                                        Watch                                         |
 | :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/listMovie.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/infoUI.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/watchUI.png) |
 
