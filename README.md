@@ -129,6 +129,16 @@ List the ready features here:
 
 ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/usecase.png)
 
+<h3> State diagram </h3> 
+### - Register 
+
+![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/Sequence1.png)
+
+### - Register 
+
+![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/Sequence2.png)
+
+
 <h2 id="screenshot"> 📸 Screenshots </h2>
 
 ### Client
