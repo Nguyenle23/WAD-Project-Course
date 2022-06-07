@@ -14,7 +14,8 @@ You are the ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix
 
 <h4>Motivation</h4> 
 <p>Our team originally planned to do a bug tracker project to create a website to track the progress of a job or a project. However, the project was stopped because the team did not understand and did not share the same interests.
-And finally, we chose to clone a very popular movie site: Netflix. This gives us inspiration when implementing because the whole team has the same hobby of watching movies. And at the same time, the project has more opportunities for each member to develop programming skills to guide the career path.</p> 
+And finally, we chose to clone a very popular movie site: Netflix. This gives us inspiration when implementing because the whole team has the same hobby of watching movies. And at the same time, the project has more opportunities for each member to develop programming skills to guide the career path.</p>
+<p>Thanks to the analysis of Netflix's website, every member of the team can recognize and understand its operation and implement it with small inputs, or make up the basic website under other frameworks and libraries together.</p>
 
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
 <details open="open">
