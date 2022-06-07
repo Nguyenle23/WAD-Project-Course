@@ -134,7 +134,7 @@ List the ready features here:
 
 ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence1.png)
 
-### - Register 
+### - Watch 
 
 ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence2.png)
 
