@@ -132,11 +132,11 @@ List the ready features here:
 <h3> State diagram </h3> 
 ### - Register 
 
-![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/Sequence1.png)
+![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence1.png)
 
 ### - Register 
 
-![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/Sequence2.png)
+![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence2.png)
 
 
 <h2 id="screenshot"> 📸 Screenshots </h2>
