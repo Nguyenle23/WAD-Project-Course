@@ -3,7 +3,7 @@
 <!-- > Live demo [_here_](https://www.example.com). -->
 
 # Introduction
-- Netflix from <strong>N.N.A</strong>
+- Netflix from <strong>N.N.S</strong>
 
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
 <details open="open">
