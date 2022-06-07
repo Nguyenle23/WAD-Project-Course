@@ -1,5 +1,5 @@
 # Netflix-MERN
-> The web project for Web Application Developement course.
+> The project for Web Application Developement course.
 <!-- > Live demo [_here_](https://www.example.com). -->
 
 # Introduction
