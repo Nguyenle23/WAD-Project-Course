@@ -1,0 +1,127 @@
+.topbar {
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.topbarWrapper {
+    height: 100%;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(190, 16, 16);
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: rgb(255, 255, 255);
+}
+
+.topRight {
+    display: flex;
+    align-items: center;
+}
+
+.topbarIconContainer {
+    position: relative;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.topbarIconContainer:hover {
+    color: #ccc;
+}
+
+.topIconBadge {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.topAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border-style: solid;
+    /* border-color: rgba(247, 247, 247, 0.904); */
+    border-color: #fff;
+}
+
+.topAvatar:hover {
+    border-color: #ccc;
+}
+
+.settingIcon {
+    margin-top: -5px;
+    padding: 5px 40px;
+    width: 100%;
+    height: 100%;
+}
+
+.settingIcon:hover {
+    color: #ccc;
+}
+
+.dropdownLogout {
+    position: relative;
+    display: inline-block;
+    padding: 5px 27px;
+    height: 100%;
+    width: 100%;
+    line-height: 30px;
+}
+
+.dropdownProfile {
+    position: relative;
+    display: inline-block;
+    padding: 0px 5px;
+}
+
+.dropdownContent {
+    padding-top: 5px;
+    width: 100px;
+    top: 50px;
+    right: -20px;
+    z-index: 1;
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: #fff;
+}
+
+.dropdownProfile:hover .dropdownContent {
+    display: block;
+}
+
+.dropdownProfile .settingIcon:hover {
+    background-color: #333;
+}
+
+.dropdownProfile .dropdownLogout:hover {
+    background-color: #333;
+    color: #ccc;
+    cursor: pointer;
+    user-select: none;
+}
