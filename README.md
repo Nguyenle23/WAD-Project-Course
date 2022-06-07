@@ -110,9 +110,11 @@ List the ready features here:
     │   │   ├── pages
     │   │   ├── App.js
     │   │   ├── index.js
+    
 <h2 id="diagram"> 🖥 Diagrams </h2>
 
 <h3> Class diagram </h3> 
+
 ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/usecase.png)
 
 <h2 id="screenshot"> 📸 Screenshots </h2>
