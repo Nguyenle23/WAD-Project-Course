@@ -52,7 +52,7 @@ List the ready features here:
 | Field | Client | Dashboard | 
 | ----- | ----- | --------- | 
 | User  | Register - Login - Logout - Forget account | Login - Update - Delete - Statis - Logout account |
-| Movie | Watch - Random - Filter type of video - Search - Subtitles - Speed up movie | Create - Update - Delete - Random movie |
+| Movie | Watch - Random - Filter type of movie - Search - Subtitles - Speed up movie | Create - Update - Delete - Random movie |
 | List  | Watch trailer - Filter genre of list | Create - Update - Delete - Random list |
 
 <h2 id="setup"> 🧰 Setup</h2>
@@ -177,3 +177,4 @@ List the ready features here:
 - Improving search movies and developing search list 
 - Building quickly change user
 - Implement a recommendation system
+- Implemtn "last watched" and "continue watching" feature
