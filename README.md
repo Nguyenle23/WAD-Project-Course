@@ -3,7 +3,7 @@
 You are the ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix-mern)!
 
 # Introduction
-- Netflix from <strong>N.N.S</strong>
+<h2> Netflix Clone from <strong>N.N.S</strong></h2>
 <h4>Member</h4>
 
 | Number | ID | Name | Task allocation | 
