@@ -177,4 +177,12 @@ List the ready features here:
 - Improving search movies and developing search list 
 - Building quickly change user
 - Implement a recommendation system
-- Implemtn "last watched" and "continue watching" feature
+- Implement "last watched" and "continue watching" feature
+
+### What We Learnt
+- Implementation of MERN stack technology
+- Usage of different frameworks and libaries
+- Usage of Git, pull, merge and commit
+- Organize files to better manage development
+- Communication between Frontend and Backend developers
+- Importance of README.md
