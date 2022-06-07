@@ -19,10 +19,6 @@ import "./movie.scss";
 export default function Movie() {
   const [value, setValue] = useState('1');
 
-  // const onMenuItem1Click = () => {
-  //   console.log('Clicked menu item 1');
-  // };
-
   const onCheck = (e) => {
     const radio = e.target.value;
     setValue(radio.value);
@@ -71,41 +67,6 @@ export default function Movie() {
       
         <DefaultUi noControls>
           <DefaultControls hideOnMouseLeave activeDuration={2000} />
-
-          {/* <Settings>
-            <Submenu label="Movie Audio" hint="English" >
-              <MenuRadioGroup value={value} onVmCheck={onCheck}>
-                <MenuItem label="English" />
-                <MenuItem label="French" />
-                <MenuItem label="German" />
-              </MenuRadioGroup>
-            </Submenu>
-            
-            <Submenu label="Movie Speed" hint="normal" >
-              <MenuRadioGroup value={value} onVmCheck={onCheck}>
-                <MenuItem label="normal" value="1" />
-                <MenuItem label="1.5x" value="2" />
-                <MenuItem label="2x" value="3" />
-              </MenuRadioGroup>
-            </Submenu>
-
-            <Submenu label="Movie Quality" hint="1080p">
-              <MenuRadioGroup value={value} onVmCheck={onCheck}>
-                <MenuRadio label="480p" value="1" />
-                <MenuRadio label="720p" value="2" />
-                <MenuRadio label="1080p" value="3" />
-              </MenuRadioGroup>
-            </Submenu>
-
-            <Submenu label="Subtitles" hint="English">
-              <MenuRadioGroup value={value} onVmCheck={onCheck}>
-                <MenuItem label="English" />
-                <MenuItem label="French" />
-                <MenuItem label="German" />
-              </MenuRadioGroup>
-            </Submenu>
-
-          </Settings> */}
         </DefaultUi>
       </Player>
     </div>
