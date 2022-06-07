@@ -1,6 +1,6 @@
 # Netflix-MERN
 > The project for Web Application Developement course.
-You are the ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix-mern)!
+You are the  ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix-mern)!
 
 # Introduction
 <h2> Netflix Clone from <strong>N.N.S</strong></h2>
@@ -165,7 +165,7 @@ List the ready features here:
 | :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/movieList.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/movieEdit.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/createMovie.png) |
 
-|                                        List List                                        |                                        Update List                                |                                        Create List                                        |
+|                                        Display List                                        |                                        Update List                                |                                        Create List                                        |
 | :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/listList.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/listEdit.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Admin/createList.png) |
 
