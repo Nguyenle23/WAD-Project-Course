@@ -18,9 +18,9 @@ const Movie = new Schema({
     subtitle: {
         type: Object,
         default: {
-            en: { type: String },
-            vi: { type: String },
-            indo: { type: String },
+            en: { type: String, default: '' },
+            vi: { type: String, default: '' },
+            indo: { type: String, default: '' },
         }
     },
 }, {

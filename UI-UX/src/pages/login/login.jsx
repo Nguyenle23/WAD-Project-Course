@@ -74,6 +74,7 @@ export default function Login() {
                 : 
                 null 
               }
+              {url ? <a className="re-sub" href={url}>Re-subscribes!</a> : null}
               <input 
                 className="inputLogin"
                 type="email"
@@ -90,7 +91,6 @@ export default function Login() {
                 Sign In
               </button>
               <span className="forgotLogin">
-                {url ? <a className="re-sub" href={url}>Re-subscribes!</a> : null}
                 <button className="forgot" onClick={() => setForgot(!forgot)}>Need help?</button>
               </span>
               <span className="breifLogin">

@@ -3,6 +3,14 @@ const Movie = require('../models/Movie');
 const createMovie = async(req, res) => {
     if (req.user.isAdmin) {
         const newMovie = new Movie(req.body);
+        if (!newMovie.subtitle.en) {
+            newMovie.subtitle.en = newMovie.title;
+        }
+        if (!newMovie.subtitle.vi) {
+            newMovie.subtitle.vi = newMovie.title;
+        } else if (!newMovie.subtitle.indo) {
+            newMovie.subtitle.indo = newMovie.title;
+        }
         try {
             const savedMovie = await newMovie.save();
             res.status(201).json(savedMovie);

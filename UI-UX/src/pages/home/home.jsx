@@ -18,7 +18,7 @@ const Home = ({ type }) => {
       setFilter(data);
     }
   }
-  
+
   useEffect(() => {
       try {
         getRandomList(type, genre)
@@ -45,7 +45,7 @@ const Home = ({ type }) => {
       {filter.map((filter) => (
         <h1>{filter.title}</h1>
       ))}
-      {lists.length === 0 ?
+      {!lists ?
         <div className="notice">No {type} for this genre <strong>{genre}</strong></div>
       :
         lists.map((list, index) => (

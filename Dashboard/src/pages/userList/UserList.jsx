@@ -35,13 +35,14 @@ export default function UserList() {
     // },
     { field: "fullname", headerName: "Full name", width: 150 },
     { field: "email", headerName: "Email", width: 200 },
-    { field: "gender", headerName: "Gender", width: 130 },
-    // { field: "location", headerName: "Location", width: 130 },
-    {
-      field: "isActive",
-      headerName: "Is Active",
-      width: 140,
-    },
+    { field: "gender", headerName: "Gender", width: 120 },
+    { field: "beginDate", headerName: "Begin Date", width: 150 },
+    { field: "expiredDate", headerName: "Expired Date", width: 150 },
+    // {
+    //   field: "isActive",
+    //   headerName: "Is Active",
+    //   width: 140,
+    // },
     {
       field: "price",
       headerName: "Total price",

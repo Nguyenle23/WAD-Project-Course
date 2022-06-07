@@ -222,7 +222,7 @@ const login = async(req, res) => {
                             const update = {
                                 isActive: true,
                                 price: totalAmount,
-                                beginDate: new Date().toLocaleString(),
+                                beginDate: user.expiredDate,
                                 expiredDate: new Date(new Date().setDate(new Date().getDate() + 30)).toLocaleString(),
                             }
                             try {

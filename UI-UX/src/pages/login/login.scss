@@ -45,6 +45,17 @@
                 margin-bottom: -5px;
                 text-transform: uppercase;
             }
+            .re-sub {
+                color: yellow;
+                font-size: 14px;
+                text-decoration: none;
+                margin-top: 0px;
+                text-align: center;
+                border: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
             .inputLogin {
                 outline: none;
                 border: none;
@@ -93,60 +104,49 @@
                 text-transform: uppercase;
             }
             .forgotLogin {
-                display: flex;
+                // display: flex;
                 justify-content: end;
-                .re-sub {
-                    color: yellow;
-                    font-size: 14px;
-                    text-decoration: none;
-                    margin-top: -8px;
-                    margin-left: 126px;
-                    border: none;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-                .forgot {
-                    background-color: transparent;
-                    color: lightgray;
-                    font-size: 14px;
-                    text-decoration: none;
-                    display: block;
-                    text-align: right;
-                    margin-top: -8px;
-                    border: none;
-                    &:hover {
-                        text-decoration: underline;
-                    }
-                }
-                .signIn {
-                    background-color: transparent;
-                    color: lightgray;
-                    font-size: 14px;
-                    text-decoration: none;
-                    display: block;
-                    text-align: right;
-                    margin-top: -60px;
-                    border: none;
-                    &:hover {
-                        text-decoration: underline;
-                    }
+            }
+            .forgot {
+                background-color: transparent;
+                color: lightgray;
+                font-size: 14px;
+                text-decoration: none;
+                display: block;
+                text-align: right;
+                margin-top: -8px;
+                border: none;
+                &:hover {
+                    text-decoration: underline;
                 }
             }
-            .breifLogin,
-            .policy {
-                margin-top: 10px;
+            .signIn {
+                background-color: transparent;
                 color: lightgray;
-                user-select: none;
-                b {
-                    color: white;
+                font-size: 14px;
+                text-decoration: none;
+                display: block;
+                text-align: right;
+                margin-top: -60px;
+                border: none;
+                &:hover {
+                    text-decoration: underline;
                 }
-                .signUp {
-                    text-decoration: none;
-                    &:hover {
-                        text-decoration: underline;
-                        text-decoration-color: white;
-                    }
+            }
+        }
+        .breifLogin,
+        .policy {
+            margin-top: 10px;
+            color: lightgray;
+            user-select: none;
+            b {
+                color: white;
+            }
+            .signUp {
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                    text-decoration-color: white;
                 }
             }
         }
