@@ -1,0 +1,107 @@
+.single {
+    display: flex;
+    width: 100%;
+    
+
+    .single_container { 
+        flex: 6;
+        
+
+        .single_top {
+            padding: 20px;
+            display: flex;
+
+            gap: 20px;
+
+            .single_top_left { 
+                flex: 1;
+                padding: 20px;
+                box-shadow: 1px 0px 27px -1px #7d7d7d27;
+                border-radius: 5px;
+                position: relative;
+
+                .title {
+                    color: rgb(163, 4, 4);
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                } 
+
+                .edit_button {
+                    position: absolute;
+                    top: 5px;
+                    right: 10px; 
+                    padding: 5px;
+                    font-size: 18px;
+                    border-radius: 5px;
+                    background-color: #ffc5c52a;
+                    color: rgb(163, 4, 4);
+                    cursor: pointer;
+                }
+                
+                .items { 
+                    display: flex;
+    
+                    .item_img { 
+                        width: 120px;
+                        height: 120px;
+                        border: 0.5px solid #00000052;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        // box-shadow: 1px 0px 27px -1px #7d7d7d0f;
+                    }
+
+                    .details { 
+                        margin-left: 40px;
+                                             
+                        .detail_name { 
+                            margin-bottom: 10px;
+                            color: #555;
+                        }
+
+                        .detail_item { 
+                            font-size: 18px;
+                            color: #555;
+                            margin-bottom: 10px;
+
+                            .detail_Key { 
+                                font-weight: bold;
+                                color: #555;
+                                margin-right: 10px;
+                            }
+                            .detail_Value { 
+                                font-weight: lighter;
+                               
+
+
+                            }
+                        }
+                    }
+                }
+                
+            }
+            .single_top_right { 
+                flex: 2;
+                padding: 20px;
+                box-shadow: 1px 0px 27px -1px #7d7d7d27;
+                border-radius: 5px;
+            }
+
+            
+        }
+
+        .single_bottom { 
+            margin: 20px;
+            box-shadow: 1px 0px 27px -1px #7d7d7d27;
+            border-radius: 5px;
+            padding: 20px;
+
+            .single_bottom_title { 
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 15px;
+                color: rgb(163, 4, 4);
+            }
+        }
+    }
+}

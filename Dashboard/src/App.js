@@ -1,68 +1,55 @@
-import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from "./components/topbar/Topbar";
-import "./App.css";
-import Home from "./pages/home/Home";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import UserList from "./pages/userList/UserList";
-import User from "./pages/user/User";
-import NewUser from "./pages/newUser/NewUser";
-import MovieList from "./pages/movieList/MovieList";
-import Product from "./pages/product/Product";
-import NewProduct from "./pages/newProduct/NewProduct";
-import Login from './pages/login/Login';
-import { AuthContext } from './context/authContext/AuthContext';
-import { useContext } from 'react';
-import ListList from "./pages/listList/ListList";
-import List from "./pages/list/List";
-import NewList from './pages/newList/NewList';
+import Home    from "./pages/home/Home";
+import Login   from "./pages/login/Login";
+import List    from "./pages/list/List";
+import Single from "./pages/single/Single";
+import New from "./pages/new/New";
+import {
+  BrowserRouter, 
+  Routes,
+  Route,
+} from "react-router-dom";
+
+import './components/style/dark.scss';
 
 function App() {
-  const {user} = useContext(AuthContext);
+  const MONTH = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ]; 
 
+  // const [ userState, setUserState ] = useState([])
+  
   return (
-    <Router>
-      <Switch>
-        <Route path="/login">{user ? <Redirect to="/" /> : <Login />} </Route>
-        {user && (
-          <>
-            <Topbar />
-            <div className="container">
-              <Sidebar />
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/users">
-                <UserList />
-              </Route>
-              <Route path="/user/:userId">
-                <User />
-              </Route>
-              <Route path="/newUser">
-                <NewUser />
-              </Route>
-              <Route path="/movies">
-                <MovieList />
-              </Route>
-              <Route path="/product/:productId">
-                <Product />
-              </Route>
-              <Route path="/newproduct">
-                <NewProduct />
-              </Route>
-              <Route path="/lists">
-                <ListList />
-              </Route>
-              <Route path="/list/:listId">
-                <List />
-              </Route>
-              <Route path="/newlist">
-                <NewList />
-              </Route>
-            </div> 
-          </>
-        )}
-      </Switch>
-    </Router>
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/">
+            <Route index element = {<Home />} />
+            <Route path="login" element = {<Login/>}/>
+            <Route path="user">
+              <Route index element = {<List />} />
+              <Route path=":userId" element = {<Single />} />
+              <Route path="new" element = {<New />} />
+            </Route>
+            <Route path="products">
+              <Route index element = {<List />} />
+              <Route path=":productId" element = {<Single />} />
+              <Route path="new" element = {<New />} />
+            </Route>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

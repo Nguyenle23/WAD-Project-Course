@@ -1,0 +1,85 @@
+.new { 
+    width: 100%;
+    display: flex;
+
+    .new_container { 
+        flex: 6;
+
+        .new_container_top { 
+            box-shadow: 1px 0px 27px -1px #7d7d7d27;
+            padding: 10px;
+            padding: 20px;
+            margin: 20px;
+
+            h1 { 
+                color: rgb(163, 4, 4);
+                font-size: 20px;
+            }
+        }
+
+        .new_container_bottom { 
+            box-shadow: 1px 0px 27px -1px #7d7d7d27;
+            padding: 10px;
+            padding: 20px;
+            margin: 20px;
+            display: flex;
+
+            .bottom_left { 
+                flex: 1;
+                text-align: center;
+                justify-content: center;
+
+                .left_img { 
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+            }
+
+            .bottom_right { 
+                flex: 2;
+
+                form { 
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+
+                    .formInput { 
+                        width: 40%;
+                        padding: 10px;
+
+                        label { 
+                            display: flex;
+                            align-items: center;
+                            gap: 10px;
+
+                            .lable_logo {
+                                cursor: pointer;
+                            }
+                        }
+
+                        input { 
+                            width: 100%;
+                            padding: 5px;
+                            border: none;
+                            border-bottom: 1px solid;
+                        }
+                    }
+
+                    button { 
+                        width: 150px;
+                        padding: 10px;
+                        border: none; 
+                        color: white;
+                        font-weight: 800;
+                        cursor: pointer;
+                        background-color: rgba(163, 4, 4, 0.698);
+                    }
+                }
+
+            }
+                
+            }
+        }
+    }

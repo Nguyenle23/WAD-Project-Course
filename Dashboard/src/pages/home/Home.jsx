@@ -1,43 +1,36 @@
+
+import Sidebar from "../../components/sidebar/Sidebar";
+import Navbar from "../../components/navbar/Navbar";
+import Widget from "../../components/widget/Widget";
+import "./home.scss";
+import Feature from "../../components/feature/Feature";
 import Chart from "../../components/chart/Chart";
-import FeaturedInfo from "../../components/featuredInfo/FeaturedInfo";
-import React, { useState, useEffect, useMemo } from "react";
-import WidgetSm from "../../components/widgetSm/WidgetSm";
-import WidgetLg from "../../components/widgetLg/WidgetLg";
-import { getStat } from '../../actions/index';
+import Table from "../../components/table/Table";
 
-import "./home.css";
-export default function Home() {
-  const MONTHS = useMemo(() => ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],[]);
-  const [userStat, setUserStat] = useState([]);
-
-  useEffect(() => {
-    try {
-      getStat()
-        .then((res) => {
-          const statsList = res.data.sort(function (a, b) {
-            return a._id - b._id;
-          })
-          statsList.map(item => 
-            setUserStat(prev => 
-              [...prev, {name: MONTHS[item._id - 1], "New User": item.total}]
-            )
-          );
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  }, [MONTHS]);
-  
-  console.log(userStat);
-
+export const Home = () => {
   return (
     <div className="home">
-      <FeaturedInfo />
-      <Chart data={userStat} title="User Analytics" grid dataKey="New User" />
-      <div className="homeWidgets">
-        <WidgetSm/>
-        <WidgetLg/>
-      </div>
+        <Sidebar />
+        <div className="homeContainer">
+            <Navbar />
+            <div className="widgets">
+              <Widget senerio="user" />
+              <Widget senerio="order" />
+              <Widget senerio="earning" />
+              <Widget senerio="balance" />
+            </div>
+            <div className="charts">
+              <Feature />
+              <Chart title="Total amount of last year" aspect={2/1} />
+            </div>
+            <div className="listContainer">
+              <div className="listContainer_title">Latest Transaction</div>
+              <Table />
+            </div>
+        </div>
+
     </div>
-  );
+  )
 }
+
+export default Home

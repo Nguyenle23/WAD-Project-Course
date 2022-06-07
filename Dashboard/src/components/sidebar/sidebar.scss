@@ -1,0 +1,109 @@
+.sidebar {
+    flex: 1;
+    border-right: 0.5px solid rgba(163, 4, 4, 0.095);
+    min-height: 100vh;
+    background-color: white;
+
+    .top {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            color: rgb(163, 4, 4);
+        }
+    }
+
+    hr { 
+        height: 0;
+        border: 0.5px solid rgba(163, 4, 4, 0.095);
+    }
+
+    .center { 
+        padding-left: 10px;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            .center_img_container {
+                display: inline-flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 5px 0px 20px 0px;
+
+                .center_img {
+                    border: 0.25px solid rgba(163, 4, 4, 0.866);; 
+                    width: 180px;
+                    height: 180px;
+                    border-radius: 50%;
+                    margin: 20px 20px 14px 20px;
+                }
+                .span {
+
+                }
+            }
+
+            .title {
+                font-size: 14px;
+                font-weight: 400;
+                color: rgba(116, 24, 24, 0.626);
+                margin-bottom: 10px;
+                margin-top: 20px;
+                margin-top: 5px;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: rgba(163, 4, 4, 0.474);
+                }
+
+                .center_logo { 
+                    font-size: 16px;
+                    color: rgba(112, 4, 4, 0.795) ;
+                }
+
+                span { 
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: rgb(0, 0, 0);
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .bottom { 
+        display: flex;
+        align-items: center;
+        margin: 5px;
+
+        .color_option { 
+            width: 20px;
+            height: 20px;
+            border-radius: 5px solid rgba(163, 4, 4, 0.633);
+            cursor: pointer;
+            margin: 5px;
+
+            &:nth-child(1){
+                background-color: rgb(163, 4, 4);
+            }
+            &:nth-child(2){
+                background-color: rgb(160, 160, 160);
+            }
+            &:nth-child(3){
+                background-color: rgb(37, 37, 37);
+            }
+        }
+    }
+}
