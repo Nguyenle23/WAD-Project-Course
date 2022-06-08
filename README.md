@@ -4,6 +4,7 @@ You are the  ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netfli
 
 # Introduction
 <h2> Netflix Clone from <strong>N.N.S</strong></h2>
+
 <h4>Member</h4>
 
 | Number | ID | Name | Task allocation | 
@@ -12,11 +13,12 @@ You are the  ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netfli
 | 2 | ITITWE19024 | [Dương Minh Nhựt](https://github.com/mnhwt0108) | React User Interface |
 | 3  |  ITITIU19067 | [Lê Hữu Sỹ](https://github.com/Ted1804) | React Dashboard Interface |
 
-
 <h4>Motivation</h4> 
 <p>Our team originally planned to implement an issues tracker project to create a website to track the progress of a job or a project. However, the project was put on a hold since we did not found it captivating and that we wanted a more practical web application.
 In the end, we decied on our commom interest, a very popular movie site: Netflix. Not only that it gave us inspiration when implementing since the whole team has the same hobby of watching movies. And at the same time, the project has more opportunities for each member to develop programming skills to guide the career path as well as its practical usage.</p>
 <p>Thanks to the analysis of Netflix's website, every member on the team can recognize and understand its operation and implement it with small inputs, or make up the basic website under other frameworks and libraries together.</p>
+
+<h4>Present slides: <a href=https://www.canva.com/design/DAFCz8WDbMk/view> here </a> </h4>
 
 <h2 id="table-of-contents"> :book: Table of Contents</h2>
 <details open="open">
@@ -140,9 +142,9 @@ List the ready features here:
 <h2 id="screenshot"> 📸 Screenshots </h2>
 
 ### Client
-|                                        Login                                        |                                        Register                                |                                        Forget Password                                        |
-| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
-| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/login.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/register.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/forgetPass.png) |
+|                                        Login                                        |                                        Register                                |                                        Forget Password                                        |                                        Verify Email              |
+| :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
+| ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/login.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/register.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/forgetPass.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Client/veriyEmail.png) |
 
 |                                        Home Page                                        |                                        Profile                                |                                        Payment                                        |
 | :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
