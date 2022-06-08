@@ -1,4 +1,4 @@
-# Netflix-MERN
+# Netflix-MERN ![Netflix](https://img.shields.io/badge/Netflix-E50914?style=for-the-badge&logo=netflix&logoColor=white)
 > The project for Web Application Developement course.
 You are the  ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix-mern)!
 
