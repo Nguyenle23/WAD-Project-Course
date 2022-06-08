@@ -3,7 +3,7 @@
 You are the  ![](https://visitor-badge.glitch.me/badge?page_id=Nguyenle23.netflix-mern)!
 
 # Introduction
-<h2> Netflix Clone from <strong>N.N.S</strong></h2>
+<h3> Netflix Clone from <strong>N.N.S</strong> </h3>
 
 <h4>Member</h4>
 
@@ -53,7 +53,7 @@ List the ready features here:
 
 | Field | Client | Dashboard | 
 | ----- | ----- | --------- | 
-| User  | Register - Login - Logout - Forget account | Login - Update - Delete - Statis - Logout account |
+| User  | Register - Login - Logout - Forget account - Re-subcribe account | Login - Update - Delete - Statis - Logout account |
 | Movie | Watch - Random - Filter type of movie - Search - Subtitles - Speed up movie | Create - Update - Delete - Random movie |
 | List  | Watch trailer - Filter genre of list | Create - Update - Delete - Random list |
 
