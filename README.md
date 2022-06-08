@@ -134,7 +134,7 @@ List the ready features here:
 
 <h3> Sequence diagram </h3> 
 
-|                                        Register                                        |                                        Watch                                |                                        Subcribe                                        |
+|                                        Login                                        |                                        Watch                                |                                        Subcribe                                        |
 | :--------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------: |
 | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence1.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence2.png) | ![](https://github.com/Nguyenle23/netflix-mern/blob/main/Images/Diagram/sequence3.png) |
 
