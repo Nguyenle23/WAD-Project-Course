@@ -64,6 +64,11 @@ List the ready features here:
     <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/Dashboard">Dashboard</a></li>
     <li><a href="https://github.com/Nguyenle23/netflix-mern/tree/main/UI-UX">Client</a></li>
   </ul>
+  <p>There are 2 other <strong>Dashboard</strong> project:</p>
+  <ol>
+    <li><a href="https://github.com/Nguyenle23/springboot-dashboard"><strong>Springboot</strong></a></li>
+    <li><a href="https://github.com/Nguyenle23/flask-dashboard"><strong>Flask</strong></a></li>
+  </ol>
 
 <h2 id="technologies"> 🖥️ Technologies</h2>
 
